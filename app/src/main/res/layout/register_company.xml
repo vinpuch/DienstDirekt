@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="370dp"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded_corner"
+        android:inputType="textEmailAddress"
+        android:padding="8dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="100dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="Vorname"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="93dp" />
+
+    <EditText
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_corner"
+        android:inputType="textEmailAddress"
+        android:padding="8dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="580dp" />
+
+    <EditText
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_corner"
+        android:inputType="textEmailAddress"
+        android:padding="8dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="500dp" />
+
+    <EditText
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_corner"
+        android:inputType="textEmailAddress"
+        android:padding="8dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="420dp" />
+
+    <EditText
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_corner"
+        android:inputType="textEmailAddress"
+        android:padding="8dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="340dp" />
+
+    <EditText
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_corner"
+        android:inputType="textEmailAddress"
+        android:padding="8dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="260dp" />
+
+    <EditText
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_corner"
+        android:inputType="textEmailAddress"
+        android:padding="8dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="180dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="Nachname"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="171dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="Geburtsdatum"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="251dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="E-Mail"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="330dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="Handynummer"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="Passwort"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="489dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="Passwort wiederholen"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="571dp" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar"
+        android:layout_width="354dp"
+        android:layout_height="54dp"
+        android:background="@color/ic_launcher_background"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="Registrieren"
+        app:titleCentered="false"
+        app:titleTextColor="#000000"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#6FB98F"
+        android:clickable="true"
+        app:backgroundTint="#6FB98F"
+        app:srcCompat="@drawable/check_24dp_fill0_wght400_grad0_opsz24"
+        tools:layout_editor_absoluteX="334dp"
+        tools:layout_editor_absoluteY="656dp" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="35dp"
+        android:layout_height="34dp"
+        app:srcCompat="@drawable/person_20dp_fill0_wght400_grad0_opsz20"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="110dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="35dp"
+        android:layout_height="34dp"
+        app:srcCompat="@drawable/person_20dp_fill0_wght400_grad0_opsz20"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="190dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="30dp"
+        android:layout_height="29dp"
+        app:srcCompat="@drawable/calendar_today_20dp_fill0_wght400_grad0_opsz20"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="275dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
+        app:srcCompat="@drawable/mail_20dp_fill0_wght400_grad0_opsz20"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="351dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="27dp"
+        android:layout_height="28dp"
+        app:srcCompat="@drawable/call_20dp_fill0_wght400_grad0_opsz20"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="435dp" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        app:srcCompat="@drawable/key_20dp_fill0_wght400_grad0_opsz20"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="514dp" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        app:srcCompat="@drawable/key_20dp_fill0_wght400_grad0_opsz20"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="595dp" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="42dp"
+        android:layout_height="35dp"
+        app:srcCompat="@drawable/arrorw"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="10dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

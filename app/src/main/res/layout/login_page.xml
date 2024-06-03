@@ -21,30 +21,41 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="163dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.425" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
         android:layout_width="160dp"
         android:layout_height="36dp"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/rounded_corner"
         android:backgroundTint="#FFFFFF"
         android:text="Mit Google anmelden"
         android:textAllCaps="false"
         android:textColor="#818181"
         android:textSize="10dp"
-        android:background="@drawable/rounded_corner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.425" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="160dp"
-        android:layout_height="36dp"
+        android:layout_width="163dp"
+        android:layout_height="40dp"
         android:background="@drawable/rounded_corner"
-        android:backgroundTint="#FFFFFF"
-        android:text="Mit Facebook anmelden"
-        android:textAllCaps="false"
-        android:textColor="#3b5998"
-        android:textSize="10dp"
+        android:backgroundTint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.908"
@@ -53,6 +64,23 @@
         app:layout_constraintVertical_bias="0.425" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="160dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#FFFFFF"
+        android:text="Mit Facebook anmelden"
+        android:textAllCaps="false"
+        android:textColor="#3b5998"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.425" />
+
+    <ImageButton
         android:layout_width="58dp"
         android:layout_height="58dp"
         android:layout_marginStart="280dp"
@@ -60,6 +88,7 @@
         android:layout_marginBottom="32dp"
         android:background="@drawable/rounded_corner_button"
         android:backgroundTint="#6FB98F"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.684"
@@ -133,5 +162,6 @@
         android:text="Passwort"
         tools:layout_editor_absoluteX="42dp"
         tools:layout_editor_absoluteY="230dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:backgroundTint="#FEF7FF">
 
     <TextView
         android:id="@+id/textView2"
@@ -20,43 +21,78 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="79dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="295dp"
-        android:layout_marginTop="646dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/teal_200"
+        android:layout_width="160dp"
+        android:layout_height="36dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Mit Google anmelden"
+        android:textAllCaps="false"
+        android:textColor="#818181"
+        android:textSize="10dp"
         android:background="@drawable/rounded_corner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.425" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="160dp"
+        android:layout_height="36dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#FFFFFF"
+        android:text="Mit Facebook anmelden"
+        android:textAllCaps="false"
+        android:textColor="#3b5998"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.908"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.425" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="646dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/rounded_corner_button"
+        android:backgroundTint="#6FB98F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.684"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kein Account? Jetzt registrieren"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="429dp" />
+        android:textColor="#000000"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="356dp" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Als Gast fortfahren"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="460dp" />
+        android:textColor="#000000"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="387dp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Passwort vergessen"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="492dp" />
+        android:textColor="#000000"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="419dp" />
 
     <EditText
         android:layout_width="358dp"

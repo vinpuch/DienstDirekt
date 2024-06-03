@@ -15,7 +15,7 @@
         android:layout_marginEnd="193dp"
         android:scaleX="2"
         android:scaleY="2"
-        android:text="DienstDirekt"
+        android:text="@string/app_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,10 +40,10 @@
         android:layout_marginStart="32dp"
         android:background="@drawable/rounded_corner"
         android:backgroundTint="#FFFFFF"
-        android:text="Mit Google anmelden"
+        android:text="@string/google_login"
         android:textAllCaps="false"
         android:textColor="#818181"
-        android:textSize="10dp"
+        android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -69,10 +69,10 @@
         android:layout_marginEnd="24dp"
         android:background="@drawable/rounded_corner"
         android:backgroundTint="#FFFFFF"
-        android:text="Mit Facebook anmelden"
+        android:text="@string/facebook_login"
         android:textAllCaps="false"
         android:textColor="#3b5998"
-        android:textSize="10dp"
+        android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -88,6 +88,7 @@
         android:layout_marginBottom="32dp"
         android:background="@drawable/rounded_corner_button"
         android:backgroundTint="#6FB98F"
+        android:contentDescription="@string/button_description"
         android:src="@drawable/baseline_arrow_forward_ios_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,28 +101,31 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kein Account? Jetzt registrieren"
+        android:text="@string/login_no_account"
         android:textColor="#000000"
         tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="356dp" />
+        tools:layout_editor_absoluteY="356dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Als Gast fortfahren"
+        android:text="@string/login_as_guest"
         android:textColor="#000000"
         tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="387dp" />
+        tools:layout_editor_absoluteY="387dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Passwort vergessen"
+        android:text="@string/password_forgotten"
         android:textColor="#000000"
         tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="419dp" />
+        tools:layout_editor_absoluteY="419dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:layout_width="358dp"
@@ -133,7 +137,8 @@
         android:textColorHint="@color/black"
         android:textSize="20sp"
         tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="182dp" />
+        tools:layout_editor_absoluteY="182dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:layout_width="358dp"
@@ -145,23 +150,26 @@
         android:textColorHint="@color/black"
         android:textSize="20sp"
         tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="241dp" />
+        tools:layout_editor_absoluteY="241dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="E-Mail oder Handynummer"
+        android:text="@string/login_username"
         android:background="@color/white"
         tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="170dp" />
+        tools:layout_editor_absoluteY="170dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:text="Passwort"
+        android:text="@string/login_password"
         tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="230dp" />
+        tools:layout_editor_absoluteY="230dp"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,251 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:id="@+id/textViewLocation"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/textview_border"
+        android:fontFamily="sans-serif"
+        android:gravity="start"
+        android:hint="Ort"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="#808080"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/certificateButton" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="442dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="32dp"
+        app:fabAlignmentMode="center"
+        app:fabCradleMargin="10dp"
+        app:fabCradleRoundedCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="BottomAppBar">
+
+        <ImageButton
+            android:id="@+id/chartButton"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#FFFFFF"
+            android:scaleType="fitCenter"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/chatButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/query_stats_24dp_fill0_wght400_grad0_opsz24"
+            app:tint="#040404" />
+
+
+        <ImageButton
+            android:id="@+id/starButton"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#FFFFFF"
+            android:scaleType="fitCenter"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/assigmentButton"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/star_24dp_fill0_wght400_grad0_opsz24"
+            app:tint="#040303" />
+
+        <ImageButton
+            android:id="@+id/assigmentButton"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#FFFFFF"
+            android:scaleType="fitCenter"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/starButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/assignment_24dp_fill0_wght400_grad0_opsz24"
+            app:tint="#000000" />
+
+        <ImageButton
+            android:id="@+id/chatButton"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#FFFEFE"
+            android:scaleType="fitCenter"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/assigmentButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/chat_24dp_fill0_wght400_grad0_opsz24"
+            app:tint="#000000" />
+
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <ImageButton
+        android:id="@+id/checkButton"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="#6FB98F"
+        android:elevation="10dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/check_24dp_fill0_wght400_grad0_opsz24"
+        app:tint="#000000" />
+
+    <EditText
+        android:id="@+id/companyNameView"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/textview_border"
+        android:fontFamily="sans-serif"
+        android:gravity="start"
+        android:hint="Unternehmennamen"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="#808080"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pictureButton" />
+
+    <EditText
+        android:id="@+id/categoryView"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/textview_border"
+        android:fontFamily="sans-serif"
+        android:gravity="start"
+        android:hint="Dienstleistung"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="#808080"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/companyNameView" />
+
+    <ScrollView
+        android:id="@+id/descriptionView"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="84dp"
+        android:background="@drawable/textview_border"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomAppBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.988">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|start"
+            android:hint="Beschreibung"
+            android:inputType="textMultiLine" />
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/certificateButton"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:background="@drawable/textview_border"
+        android:fontFamily="sans-serif"
+        android:gravity="top|start"
+        android:text="Zertifizierung hinzufügen"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="#808080"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryView"
+        android:layout_marginTop="16dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/pictureButton"
+        android:layout_width="350dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="16dp"
+        android:background="#FFFFFF"
+        android:text="Bild hochladen"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="50dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="21dp"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/pictureButton"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/arrow_back_24dp_fill0_wght400_grad0_opsz24"
+        app:tint="#000000" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="263dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Unternehmensprofil"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.313"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="60dp"
+        android:layout_height="61dp"
+        android:backgroundTint="#FFFDFD"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/account_circle_24dp_fill0_wght400_grad0_opsz24"
+        app:tint="#040404" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

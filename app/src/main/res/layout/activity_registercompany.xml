@@ -10,19 +10,16 @@
         android:id="@+id/editText4"
         android:layout_width="370dp"
         android:layout_height="48dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="21dp"
         android:layout_marginTop="110dp"
         android:layout_marginEnd="21dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_corner"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         android:padding="8dp"
         android:textAlignment="center"
         android:textColorHint="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,60 +27,70 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="350dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="340dp"
         android:background="@color/white"
         android:text="Vorname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView1"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
-
-    <EditText
-        android:layout_width="370dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="580dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/rounded_corner"
-        android:inputType="textEmailAddress"
-        android:padding="8dp"
-        android:textAlignment="center"
-        android:textColorHint="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:id="@+id/editText10"
         android:layout_width="370dp"
         android:layout_height="50dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="580dp"
         android:layout_marginEnd="21dp"
         android:background="@drawable/rounded_corner"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         android:padding="8dp"
         android:textAlignment="center"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText9"
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginEnd="21dp"
+        android:background="@drawable/rounded_corner"
+        android:inputType="textPassword"
+        android:padding="8dp"
+        android:textAlignment="center"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText7"
         android:layout_width="370dp"
         android:layout_height="50dp"
+        android:layout_marginStart="21dp"
         android:layout_marginTop="420dp"
         android:layout_marginEnd="21dp"
         android:background="@drawable/rounded_corner"
-        android:inputType="textEmailAddress"
+        android:inputType="text|number"
         android:padding="8dp"
         android:textAlignment="center"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:id="@+id/editText8"
         android:layout_width="370dp"
         android:layout_height="50dp"
+        android:layout_marginStart="21dp"
         android:layout_marginTop="340dp"
         android:layout_marginEnd="21dp"
         android:background="@drawable/rounded_corner"
@@ -93,47 +100,53 @@
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText6"
         android:layout_width="370dp"
         android:layout_height="50dp"
+        android:layout_marginStart="21dp"
         android:layout_marginTop="260dp"
         android:layout_marginEnd="21dp"
         android:background="@drawable/rounded_corner"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         android:padding="8dp"
         android:textAlignment="center"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText5"
         android:layout_width="370dp"
         android:layout_height="50dp"
+        android:layout_marginStart="21dp"
         android:layout_marginTop="190dp"
         android:layout_marginEnd="21dp"
         android:background="@drawable/rounded_corner"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         android:padding="8dp"
         android:textAlignment="center"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="315dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="305dp"
         android:background="@color/white"
         android:text="Nachname"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
@@ -221,19 +234,23 @@
         android:id="@+id/imageView1"
         android:layout_width="35dp"
         android:layout_height="34dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="350dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/person_20dp_fill0_wght400_grad0_opsz20" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="35dp"
         android:layout_height="34dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="350dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/person_20dp_fill0_wght400_grad0_opsz20" />
 
@@ -241,9 +258,11 @@
         android:id="@+id/imageView3"
         android:layout_width="30dp"
         android:layout_height="29dp"
+        android:layout_marginStart="21dp"
         android:layout_marginTop="270dp"
         android:layout_marginEnd="350dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/calendar_today_20dp_fill0_wght400_grad0_opsz20" />
 
@@ -251,9 +270,11 @@
         android:id="@+id/imageView4"
         android:layout_width="27dp"
         android:layout_height="29dp"
+        android:layout_marginStart="21dp"
         android:layout_marginTop="350dp"
         android:layout_marginEnd="350dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/mail_20dp_fill0_wght400_grad0_opsz20" />
 
@@ -261,9 +282,11 @@
         android:id="@+id/imageView5"
         android:layout_width="27dp"
         android:layout_height="28dp"
+        android:layout_marginStart="21dp"
         android:layout_marginTop="430dp"
         android:layout_marginEnd="350dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/call_20dp_fill0_wght400_grad0_opsz20" />
 
@@ -271,9 +294,11 @@
         android:id="@+id/imageView6"
         android:layout_width="26dp"
         android:layout_height="26dp"
+        android:layout_marginStart="21dp"
         android:layout_marginTop="510dp"
         android:layout_marginEnd="350dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/key_20dp_fill0_wght400_grad0_opsz20" />
 
@@ -281,9 +306,11 @@
         android:id="@+id/imageView7"
         android:layout_width="26dp"
         android:layout_height="26dp"
+        android:layout_marginStart="21dp"
         android:layout_marginTop="590dp"
         android:layout_marginEnd="350dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/key_20dp_fill0_wght400_grad0_opsz20" />
 

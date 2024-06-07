@@ -59,38 +59,44 @@ class RegisterActivity : AppCompatActivity() {
                                     passwordRepeat: EditText) : Boolean {
         val firstNameInput = firstName.text.toString().trim()
         if (!isValidName(firstNameInput)) {
-            Toast.makeText(this, "please enter a valid first name", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "please enter a valid first name",
+                Toast.LENGTH_SHORT).show()
             return false
         }
 
         val lastNameInput = lastName.text.toString().trim()
         if (!isValidName(lastNameInput)) {
-            Toast.makeText(this, "please enter a valid last name", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "please enter a valid last name",
+                Toast.LENGTH_SHORT).show()
             return false
         }
 
         val birthDateInput = birthDate.text.toString().trim()
         if (!isValidBirthDate(birthDateInput)) {
-            Toast.makeText(this, "please enter a valid birth date", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "please enter a valid birth date",
+                Toast.LENGTH_SHORT).show()
             return false
         }
 
         val eMailInput = eMail.text.toString().trim()
         if (!isValidEmail(eMailInput)) {
-            Toast.makeText(this, "please enter a valid email ", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "please enter a valid email ",
+                Toast.LENGTH_SHORT).show()
             return false
         }
 
         val passwordInput = password.text.toString().trim()
         if (!isValidPassword(passwordInput)) {
-            Toast.makeText(this, "please enter a valid password ", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "please enter a valid password ",
+                Toast.LENGTH_SHORT).show()
             return false
         }
 
         val passwordRepeatInput = passwordRepeat.text.toString().trim()
         if (!isValidPassword(passwordRepeatInput)) {
             if (passwordRepeatInput != passwordInput) {
-                Toast.makeText(this, "passwords do not match ", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "passwords do not match ",
+                    Toast.LENGTH_SHORT).show()
                 return false
             }
         }
@@ -114,7 +120,9 @@ class RegisterActivity : AppCompatActivity() {
     // one lowercase letter, one digit, and one special character
     // Example: Password1!
     private fun isValidPassword(password: String): Boolean {
-        return password.matches(Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@\$!%*?&])[A-Za-z\\d@\$!%*?&]{8,}$"))
+        return password.matches(
+            Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@\$!%*?&])[A-Za-z\\d@\$!%*?&]{8,}$")
+        )
     }
 
 

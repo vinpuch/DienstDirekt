@@ -7,7 +7,7 @@
     tools:context=".ui.register.RegisterActivity" >
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/textVorname"
         android:layout_width="370dp"
         android:layout_height="48dp"
         android:layout_marginStart="21dp"
@@ -16,7 +16,7 @@
         android:background="@drawable/rounded_corner"
         android:inputType="text"
         android:padding="8dp"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +36,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText10"
+        android:id="@+id/textPasswortNochmal"
         android:layout_width="370dp"
         android:layout_height="50dp"
         android:layout_marginStart="21dp"
@@ -45,7 +45,7 @@
         android:background="@drawable/rounded_corner"
         android:inputType="textPassword"
         android:padding="8dp"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,24 +53,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText9"
+        android:id="@+id/textPasswort"
         android:layout_width="370dp"
         android:layout_height="50dp"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="496dp"
         android:layout_marginEnd="21dp"
         android:background="@drawable/rounded_corner"
         android:inputType="textPassword"
         android:padding="8dp"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/textHandynummer"
         android:layout_width="370dp"
         android:layout_height="50dp"
         android:layout_marginStart="21dp"
@@ -79,7 +80,7 @@
         android:background="@drawable/rounded_corner"
         android:inputType="text|number"
         android:padding="8dp"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +88,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/textEmail"
         android:layout_width="370dp"
         android:layout_height="50dp"
         android:layout_marginStart="21dp"
@@ -96,7 +97,7 @@
         android:background="@drawable/rounded_corner"
         android:inputType="textEmailAddress"
         android:padding="8dp"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,7 +105,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/textGeburtstag"
         android:layout_width="370dp"
         android:layout_height="50dp"
         android:layout_marginStart="21dp"
@@ -113,7 +114,7 @@
         android:background="@drawable/rounded_corner"
         android:inputType="text"
         android:padding="8dp"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -121,7 +122,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/textNachname"
         android:layout_width="370dp"
         android:layout_height="50dp"
         android:layout_marginStart="21dp"
@@ -130,7 +131,7 @@
         android:background="@drawable/rounded_corner"
         android:inputType="text"
         android:padding="8dp"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"

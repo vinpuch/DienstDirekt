@@ -134,7 +134,7 @@
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pictureButton" />
+        app:layout_constraintTop_toBottomOf="@+id/pictureFrame" />
 
     <EditText
         android:id="@+id/categoryView"
@@ -194,17 +194,30 @@
         app:layout_constraintTop_toBottomOf="@+id/categoryView"
         android:layout_marginTop="16dp" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/pictureButton"
+    <FrameLayout
+        android:id="@+id/pictureFrame"
         android:layout_width="350dp"
         android:layout_height="102dp"
         android:layout_marginTop="16dp"
-        android:background="#FFFFFF"
-        android:text="Bild hochladen"
-        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pictureButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:text="Bild hochladen"
+            android:textAllCaps="false" />
+
+    </FrameLayout>
 
     <ImageButton
         android:id="@+id/backButton"

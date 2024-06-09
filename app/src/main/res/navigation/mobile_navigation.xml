@@ -3,24 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/login_page">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.dienstdirekt.ui.home.HomeFragment"
+        android:id="@+id/login_page"
+        android:name="com.example.dienstdirekt.ui.login.LoginActivity"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_page_to_register_page"
+            app:destination="@id/register_page" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.dienstdirekt.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/register_page"
+        android:name="com.example.dienstdirekt.ui.register.RegisterActivity"
+        android:label="Register Page"
+        tools:layout="@layout/activity_registercompany" >
+        <action
+            android:id="@+id/action_register_page_to_unternehmens_page"
+            app:destination="@id/unternehmens_page" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.dienstdirekt.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/unternehmens_page"
+        android:name="com.example.dienstdirekt.ui.unternehmen.UnternehmenActivity"
+        android:label="Unternehmens Page"
+        tools:layout="@layout/activity_unternehmensprofil" />
 
 </navigation>

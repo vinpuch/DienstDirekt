@@ -3,4 +3,12 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="google_login">Mit Google anmelden</string>
+    <string name="facebook_login">Mit Facebook anmelden</string>
+    <string name="login_no_account">Kein Account? Jetzt registrieren</string>
+    <string name="login_as_guest">Als Gast fortfahren</string>
+    <string name="password_forgotten">Passwort vergessen</string>
+    <string name="button_description">Go to next page</string>
+    <string name="login_username">E-Mail oder Handynummer</string>
+    <string name="login_password">Passwort</string>
 </resources>

@@ -58,7 +58,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="340dp"
         android:text="@string/login_no_account"
-        android:textColor="#000000"
+        android:textColor="@color/cadet_blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -70,7 +70,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="380dp"
         android:text="@string/login_as_guest"
-        android:textColor="#000000"
+        android:textColor="@color/cadet_blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -82,13 +82,13 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="420dp"
         android:text="@string/password_forgotten"
-        android:textColor="#000000"
+        android:textColor="@color/cadet_blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/eMailorPhoneText"
         android:layout_width="370dp"
         android:layout_height="48dp"
         android:layout_marginStart="21dp"
@@ -106,7 +106,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/passwordText"
         android:layout_width="370dp"
         android:layout_height="48dp"
         android:layout_marginStart="21dp"

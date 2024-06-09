@@ -7,7 +7,7 @@
     tools:context=".ui.register.RegisterActivity" >
 
     <EditText
-        android:id="@+id/textVorname"
+        android:id="@+id/textUnternehmenname"
         android:layout_width="370dp"
         android:layout_height="48dp"
         android:layout_marginStart="21dp"
@@ -28,27 +28,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="340dp"
+        android:layout_marginEnd="260dp"
         android:background="@color/white"
-        android:text="Vorname"
+        android:text="Unternehmensname"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/textPasswortNochmal"
+        android:id="@+id/textHandynummer"
         android:layout_width="370dp"
         android:layout_height="50dp"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="580dp"
+        android:layout_marginTop="264dp"
         android:layout_marginEnd="21dp"
         android:background="@drawable/rounded_corner"
-        android:inputType="textPassword"
+        android:inputType="text|number"
         android:padding="8dp"
         android:textAlignment="viewStart"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,7 +57,7 @@
         android:layout_width="370dp"
         android:layout_height="50dp"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="496dp"
+        android:layout_marginTop="340dp"
         android:layout_marginEnd="21dp"
         android:background="@drawable/rounded_corner"
         android:inputType="textPassword"
@@ -70,29 +70,90 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="356dp"
+        android:layout_marginEnd="350dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/key_20dp_fill0_wght400_grad0_opsz20" />
+
     <EditText
-        android:id="@+id/textHandynummer"
+        android:id="@+id/textPasswortNochmal"
         android:layout_width="370dp"
         android:layout_height="50dp"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="424dp"
         android:layout_marginEnd="21dp"
         android:background="@drawable/rounded_corner"
-        android:inputType="text|number"
+        android:inputType="textPassword"
         android:padding="8dp"
         android:textAlignment="viewStart"
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="336dp"
+        android:layout_marginEnd="324dp"
+        android:background="@color/white"
+        android:text="Passwort"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="27dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="276dp"
+        android:layout_marginEnd="350dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/call_20dp_fill0_wght400_grad0_opsz20" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="256dp"
+        android:layout_marginEnd="288dp"
+        android:background="@color/white"
+        android:text="Handynummer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="436dp"
+        android:layout_marginEnd="350dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/key_20dp_fill0_wght400_grad0_opsz20" />
 
     <EditText
         android:id="@+id/textEmail"
         android:layout_width="370dp"
         android:layout_height="50dp"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="188dp"
         android:layout_marginEnd="21dp"
         android:background="@drawable/rounded_corner"
         android:inputType="textEmailAddress"
@@ -101,106 +162,31 @@
         android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/textGeburtstag"
-        android:layout_width="370dp"
-        android:layout_height="50dp"
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="27dp"
+        android:layout_height="29dp"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="260dp"
-        android:layout_marginEnd="21dp"
-        android:background="@drawable/rounded_corner"
-        android:inputType="text"
-        android:padding="8dp"
-        android:textAlignment="viewStart"
-        android:textColorHint="@color/black"
-        android:textSize="20sp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="350dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/textNachname"
-        android:layout_width="370dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="190dp"
-        android:layout_marginEnd="21dp"
-        android:background="@drawable/rounded_corner"
-        android:inputType="text"
-        android:padding="8dp"
-        android:textAlignment="viewStart"
-        android:textColorHint="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        android:layout_marginEnd="305dp"
-        android:background="@color/white"
-        android:text="Nachname"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:layout_marginEnd="295dp"
-        android:background="@color/white"
-        android:text="Geburtsdatum"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mail_20dp_fill0_wght400_grad0_opsz20" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="330dp"
-        android:layout_marginEnd="345dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="344dp"
         android:background="@color/white"
         android:text="E-Mail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="410dp"
-        android:layout_marginEnd="290dp"
-        android:background="@color/white"
-        android:text="Handynummer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="490dp"
-        android:layout_marginEnd="320dp"
-        android:background="@color/white"
-        android:text="Passwort"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="570dp"
-        android:layout_marginEnd="240dp"
-        android:background="@color/white"
-        android:text="Passwort wiederholen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -232,18 +218,6 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="35dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="350dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/person_20dp_fill0_wght400_grad0_opsz20" />
-
-    <ImageView
         android:id="@+id/imageView2"
         android:layout_width="35dp"
         android:layout_height="34dp"
@@ -255,65 +229,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/person_20dp_fill0_wght400_grad0_opsz20" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="30dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="270dp"
-        android:layout_marginEnd="350dp"
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="416dp"
+        android:layout_marginEnd="244dp"
+        android:background="@color/white"
+        android:text="Passwort wiederholen"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/calendar_today_20dp_fill0_wght400_grad0_opsz20" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="350dp"
-        android:layout_marginEnd="350dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mail_20dp_fill0_wght400_grad0_opsz20" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="27dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="430dp"
-        android:layout_marginEnd="350dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/call_20dp_fill0_wght400_grad0_opsz20" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="26dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="510dp"
-        android:layout_marginEnd="350dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/key_20dp_fill0_wght400_grad0_opsz20" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="26dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="590dp"
-        android:layout_marginEnd="350dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/key_20dp_fill0_wght400_grad0_opsz20" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView8"

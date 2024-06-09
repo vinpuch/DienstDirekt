@@ -49,7 +49,7 @@ class MainDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
             val phoneNumber = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PHONENUMBER))
             val password = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PASSWORD))
 
-            val accountInfo = RegisterInput(id, companyName, email, phoneNumber, password)
+            val accountInfo = RegisterInput(companyName, email, phoneNumber, password)
             account.add(accountInfo)
         }
 

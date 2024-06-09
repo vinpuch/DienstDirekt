@@ -6,9 +6,8 @@
     android:layout_height="match_parent"
     android:background="#F5F5F5"
     android:orientation="vertical"
-    tools:context=".MainDiscoverActivity">
+    tools:context=".ui.categories.CategoriesActivity">
 
-    <!-- Search Bar -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,11 +36,6 @@
             android:src="@drawable/account_circle_24dp_fill0_wght400_grad0_opsz24" />
     </LinearLayout>
 
-    <!-- Popular Services -->
-
-
-    <!-- Categories and Interests -->
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -58,10 +52,11 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="                Alles anzeigen"
+            android:text="@string/alles_anzeigen"
+            android:textAlignment="center"
             android:textColor="#004344"
             android:textColorLink="@color/cadet_blue"
             android:textStyle="bold" />
@@ -77,7 +72,7 @@
             android:layout_height="203dp"
             android:background="?android:attr/selectableItemBackground"
             android:contentDescription="Handwerk und Montage"
-            android:scaleType=""
+            android:scaleType="centerInside"
             android:src="@drawable/handwerk" />
 
         <ImageView
@@ -109,7 +104,7 @@
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="252dp"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:padding="16sp"
             android:text="Kategorien"
@@ -118,10 +113,11 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="wrap_content"
+            android:layout_width="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="                Alles anzeigen"
+            android:textAlignment="center"
+            android:text="@string/alles_anzeigen"
             android:textColor="#004344"
             android:textColorLink="@color/cadet_blue"
             android:textStyle="bold" />
@@ -205,7 +201,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="                           Alles anzeigen"
+            android:textAlignment="center"
+            android:text="@string/alles_anzeigen"
             android:textColor="#004344"
             android:textColorLink="@color/cadet_blue"
             android:textStyle="bold" />
@@ -245,11 +242,7 @@
                 android:layout_weight="1"
                 android:src="@drawable/ma" />
 
-            <!-- Add more items as needed -->
-
         </LinearLayout>
     </HorizontalScrollView>
-
-    <!-- Bottom Navigation Bar -->
 
 </LinearLayout>

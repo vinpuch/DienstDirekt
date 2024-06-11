@@ -2,12 +2,12 @@ package com.example.dienstdirekt.ui.unternehmen
 
 import android.content.ContentValues
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.dienstdirekt.DatabaseHelper
-import com.example.dienstdirekt.DatabaseContract
 import com.example.dienstdirekt.databinding.ActivityUnternehmensprofilBinding
+import com.example.dienstdirekt.ui.register.RegisterDatabaseHelper
 
 class UnternehmenActivity : AppCompatActivity() {
 
@@ -37,15 +37,7 @@ class UnternehmenActivity : AppCompatActivity() {
             val dienstleistung = binding.categoryView.text.toString()
             val ort = binding.textViewLocation.text.toString()
 
-            if (name.isEmpty() || dienstleistung.isEmpty() || ort.isEmpty()) {
-                Toast.makeText(this, "Bitte füllen Sie alle Felder aus", Toast.LENGTH_SHORT).show()
-            } else {
-
-                // hier noch bild etc
-
-                insertData(name, dienstleistung, ort,)
-                Toast.makeText(this, "Daten erfolgreich eingefügt", Toast.LENGTH_SHORT).show()
-            }
+            insertData(name, dienstleistung, ort)
         }
     }
 
@@ -55,20 +47,38 @@ class UnternehmenActivity : AppCompatActivity() {
             val uri = data.data
             binding.imageView.setImageURI(uri)
         } else if (requestCode == 2 && resultCode == RESULT_OK && data != null) {
-            val uri = data.data
-            // ...
         }
     }
 
+    private fun isValidLocation(location: String): Boolean {
+        // This is a very basic check and might not catch all invalid addresses.
+        // Consider using a more sophisticated method for production code.
+        return location.matches(Regex("^[a-zA-Z0-9.,'\\-\\s]+$"))
+    }
+
     fun insertData(name: String, dienstleistung: String, ort: String) {
-        val db = DatabaseHelper(this).writableDatabase
+        if (name.isEmpty() || dienstleistung.isEmpty() || ort.isEmpty()) {
+            Toast.makeText(this, "Bitte füllen Sie alle Felder aus", Toast.LENGTH_SHORT).show()
+        } else if (!isValidLocation(ort)) {
+            Toast.makeText(this, "Bitte geben Sie eine gültige Adresse ein", Toast.LENGTH_SHORT)
+                .show()
+            // Highlight the location field to indicate the error.
+            binding.textViewLocation.setBackgroundColor(Color.RED)
+        } else {
+            val db = RegisterDatabaseHelper(this).writableDatabase
 
-        val values = ContentValues().apply {
-            put(DatabaseContract.UnternehmenEntry.COLUMN_NAME, name)
-            put(DatabaseContract.UnternehmenEntry.COLUMN_DIENSTLEISTUNG, dienstleistung)
-            put(DatabaseContract.UnternehmenEntry.COLUMN_ORT, ort)
+            val values = ContentValues().apply {
+                put("name", name)
+                put("dienstleistung", dienstleistung)
+                put("ort", ort)
+            }
+
+            val newRowId = db?.insert("unternehmen", null, values)
+            if (newRowId != -1L) {
+                Toast.makeText(this, "Daten erfolgreich eingefügt", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Fehler beim Einfügen der Daten", Toast.LENGTH_SHORT).show()
+            }
         }
-
-        val newRowId = db?.insert(DatabaseContract.UnternehmenEntry.TABLE_NAME, null, values)
     }
 }

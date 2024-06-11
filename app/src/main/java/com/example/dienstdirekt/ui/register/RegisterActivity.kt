@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.dienstdirekt.MainActivity
 import com.example.dienstdirekt.R
 import com.example.dienstdirekt.databinding.ActivityRegistercompanyBinding
+import com.example.dienstdirekt.ui.unternehmen.UnternehmenActivity
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -26,6 +27,12 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val buttonPage2: ImageButton = findViewById(R.id.buttonPage2)
+
+        buttonPage2.setOnClickListener {
+            val intent = Intent(this, UnternehmenActivity::class.java)
+            startActivity(intent)
+        }
         binding = ActivityRegistercompanyBinding.inflate(layoutInflater)
         setContentView(binding.root)
         db = RegisterDatabaseHelper(this)
@@ -36,7 +43,7 @@ class RegisterActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        companyName = findViewById(R.id.textUnternehmenname)
+        companyName = findViewById(R.id.textUnternehmennamen)
         eMail = findViewById(R.id.textEmail)
         phoneNumber = findViewById(R.id.textHandynummer)
         password = findViewById(R.id.textPasswort)

@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".ui.register.RegisterActivity" />
         <activity android:name=".ui.unternehmen.UnternehmenActivity" />
+        <activity android:name=".ui.categories.CategoriesActivity" />
     </application>
 
 </manifest>

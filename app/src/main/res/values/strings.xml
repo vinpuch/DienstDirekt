@@ -11,4 +11,5 @@
     <string name="button_description">Go to next page</string>
     <string name="login_username">E-Mail oder Handynummer</string>
     <string name="login_password">Passwort</string>
+    <string name="alles_anzeigen">Alles anzeigen</string>
 </resources>

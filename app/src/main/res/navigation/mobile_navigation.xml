@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_login_page_to_register_page"
             app:destination="@id/register_page" />
+        <action
+            android:id="@+id/action_login_page_to_categories_page"
+            app:destination="@id/categories_page" />
     </fragment>
 
     <fragment
@@ -30,5 +33,11 @@
         android:name="com.example.dienstdirekt.ui.unternehmen.UnternehmenActivity"
         android:label="Unternehmens Page"
         tools:layout="@layout/activity_unternehmensprofil" />
+
+    <fragment
+        android:id="@+id/categories_page"
+        android:name="com.example.dienstdirekt.ui.categories.CategoriesActivity"
+        android:label="Categories Page"
+        tools:layout="@layout/activity_categories" />
 
 </navigation>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:orientation="vertical"
+    tools:context=".ui.categories.CategoriesActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:background="#45FFFFFF"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/search_24dp_fill0_wght400_grad0_opsz24" />
+
+        <EditText
+            android:layout_width="162dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="#17FFFFFF"
+            android:hint="   Dienstleistungen suchen" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/account_circle_24dp_fill0_wght400_grad0_opsz24" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="249dp"
+            android:layout_height="match_parent"
+            android:padding="16sp"
+            android:text="Beliebte Dienstleistungen"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/alles_anzeigen"
+            android:textAlignment="center"
+            android:textColor="#004344"
+            android:textColorLink="@color/cadet_blue"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="327dp"
+            android:layout_height="203dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="Handwerk und Montage"
+            android:scaleType="centerInside"
+            android:src="@drawable/handwerk" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="61dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/elektro" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:padding="16dp"
+        android:text="Kategorien und Interessen"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:padding="16sp"
+            android:text="Kategorien"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="@string/alles_anzeigen"
+            android:textColor="#004344"
+            android:textColorLink="@color/cadet_blue"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="                Alles anzeigen"
+        android:textColor="#004344"
+        android:textColorLink="@color/cadet_blue"
+        android:textStyle="bold" />
+
+    <HorizontalScrollView
+        android:contentDescription="Beliebte Dienstleistungen"
+        android:layout_width="match_parent"
+        android:layout_height="149dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="142dp"
+                android:layout_height="160dp"
+                android:layout_marginEnd="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/kunst" />
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="160dp"
+                android:layout_marginEnd="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/repa" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="103dp"
+                android:layout_height="164dp"
+                android:layout_weight="1"
+                android:src="@drawable/swe" />
+
+            <!-- Add more items as needed -->
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <!-- Hier können Sie weitere Elemente hinzufügen -->
+
+    </HorizontalScrollView>
+
+    <!-- New Services at DienstDirekt -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:padding="16dp"
+            android:text="Neue Dienstleistungen"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="@string/alles_anzeigen"
+            android:textColor="#004344"
+            android:textColorLink="@color/cadet_blue"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:contentDescription="Neue Dienstleistungen"
+        android:layout_width="match_parent"
+        android:layout_height="157dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="190dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/archi" />
+
+            <ImageView
+                android:layout_width="108dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ki" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ma" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout>

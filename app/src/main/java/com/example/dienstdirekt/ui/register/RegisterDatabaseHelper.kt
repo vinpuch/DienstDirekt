@@ -5,6 +5,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
+import com.example.dienstdirekt.MainDatabaseHelper
 
 class RegisterDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null,
     DATABASE_VERSION){
@@ -52,5 +53,21 @@ class RegisterDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATAB
         }
         db.insert(TABLE_NAME, null, values)
         db.close()
+    }
+
+    fun checkIfExists(companyName: String, email: String, phoneNumber: String): Boolean {
+        val db = writableDatabase
+        val query = "SELECT * FROM dienstleister WHERE name=? OR email=? OR telefonnummer=?"
+        val cursor = db.rawQuery(query, arrayOf(companyName, email, phoneNumber))
+
+        if (cursor.count == 0) {
+            cursor.close()
+            db.close()
+            return false
+        }
+
+        cursor.close()
+        db.close()
+        return true
     }
 }

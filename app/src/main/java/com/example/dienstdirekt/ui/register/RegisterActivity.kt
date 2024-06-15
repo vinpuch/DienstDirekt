@@ -53,12 +53,17 @@ class RegisterActivity : AppCompatActivity() {
 
             if (isValidRegistration(companyNameInput, eMailInput, phoneNumberInput, passwordInput,
                     passwordRepeatInput)) {
-                Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show()
-                val registerInput = RegisterInput(companyNameInput, eMailInput, phoneNumberInput,
-                    passwordInput)
-                db.insertCompany(registerInput)
-                finish()
-                Toast.makeText(this, "DB angelegt", Toast.LENGTH_SHORT).show()
+                if (!db.checkIfExists(companyNameInput, eMailInput, phoneNumberInput)){
+                    Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show()
+                    val registerInput = RegisterInput(companyNameInput, eMailInput, phoneNumberInput,
+                        passwordInput)
+                    db.insertCompany(registerInput)
+                    finish()
+                    Toast.makeText(this, "DB angelegt", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "company name, email or phonenumber already used",
+                        Toast.LENGTH_SHORT).show()
+                }
             }
         }
 

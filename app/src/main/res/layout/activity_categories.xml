@@ -30,6 +30,7 @@
             android:hint="   Dienstleistungen suchen" />
 
         <ImageView
+            android:id="@+id/accountIdImage"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="center_vertical"
@@ -68,6 +69,7 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/montageButton"
             android:layout_width="327dp"
             android:layout_height="203dp"
             android:background="?android:attr/selectableItemBackground"

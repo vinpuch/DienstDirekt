@@ -102,7 +102,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/registrieren"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="336dp"
@@ -204,7 +204,7 @@
         app:titleTextColor="#000000" />
 
     <ImageButton
-        android:id="@+id/buttonPage2"
+        android:id="@+id/weiter_button_registrieren"
         android:layout_width="58dp"
         android:layout_height="58dp"
         android:layout_marginEnd="21dp"

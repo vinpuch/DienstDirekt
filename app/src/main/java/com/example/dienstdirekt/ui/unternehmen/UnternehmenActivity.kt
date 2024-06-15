@@ -4,6 +4,10 @@ import android.content.ContentValues
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.Gravity
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dienstdirekt.databinding.ActivityUnternehmensprofilBinding
@@ -18,6 +22,17 @@ class UnternehmenActivity : AppCompatActivity() {
 
         binding = ActivityUnternehmensprofilBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        addTextChangedListenerToEditText(binding.editText)
+
+        // TextChangedListener für das Unternehmensnamenfeld
+        addTextChangedListenerToEditText(binding.companyNameView)
+
+        // TextChangedListener für das Ortfeld
+        addTextChangedListenerToEditText(binding.textViewLocation)
+
+        // TextChangedListener für das Dienstleistungsfeld
+        addTextChangedListenerToEditText(binding.categoryView)
 
         binding.pictureButton.setOnClickListener {
             val intent = Intent()
@@ -41,6 +56,30 @@ class UnternehmenActivity : AppCompatActivity() {
         }
     }
 
+    private fun addTextChangedListenerToEditText(editText: EditText) {
+        editText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                // Nichts zu tun
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                if (s.isNotEmpty()) {
+                    editText.gravity = Gravity.CENTER
+                    editText.textSize = 24f
+                    editText.setTextColor(Color.BLACK)
+                    editText.setPadding(20,0,0,0)
+                } else {
+                    editText.gravity = Gravity.START or Gravity.TOP
+                    editText.textSize = 14f
+                }
+            }
+
+            override fun afterTextChanged(s: Editable) {
+                // Nichts zu tun
+            }
+        })
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
@@ -51,8 +90,6 @@ class UnternehmenActivity : AppCompatActivity() {
     }
 
     private fun isValidLocation(location: String): Boolean {
-        // This is a very basic check and might not catch all invalid addresses.
-        // Consider using a more sophisticated method for production code.
         return location.matches(Regex("^[a-zA-Z0-9.,'\\-\\s]+$"))
     }
 
@@ -74,11 +111,18 @@ class UnternehmenActivity : AppCompatActivity() {
             }
 
             val newRowId = db?.insert("unternehmen", null, values)
-            if (newRowId != -1L) {
-                Toast.makeText(this, "Daten erfolgreich eingefügt", Toast.LENGTH_SHORT).show()
+            if (newRowId != null && newRowId > -1) {
+                Toast.makeText(
+                    this,
+                    "Daten erfolgreich in der Datenbank abgelegt",
+                    Toast.LENGTH_SHORT
+                ).show()
             } else {
-                Toast.makeText(this, "Fehler beim Einfügen der Daten", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "Fehler beim Einfügen der Daten in die Datenbank",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
-    }
-}
+    }}

@@ -2,7 +2,7 @@ package com.example.dienstdirekt
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
@@ -11,13 +11,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.dienstdirekt.databinding.ActivityMainBinding
 import com.example.dienstdirekt.ui.categories.CategoriesActivity
 import com.example.dienstdirekt.ui.register.RegisterActivity
-import kotlin.math.log
+import com.example.dienstdirekt.ui.unternehmen.UnternehmenActivity
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var button: ImageButton
-    private lateinit var noAccountTextView : TextView
+    private lateinit var googleLogin: Button
+    private lateinit var noAccountTextView: TextView
     private lateinit var db: MainDatabaseHelper
 
     private lateinit var emailOrPhone: EditText
@@ -30,10 +31,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         db = MainDatabaseHelper(this)
 
-
-        noAccountTextView = findViewById(R.id.textView6)
-        noAccountTextView.setOnClickListener {
+        // In Ihrer MainActivity
+        val registerButton: TextView = findViewById(R.id.registrieren)
+        registerButton.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
+        googleLogin = findViewById(R.id.googleLogin)
+        googleLogin.setOnClickListener {
+            val intent = Intent(this, CategoriesActivity::class.java)
             startActivity(intent)
         }
 
@@ -50,22 +57,26 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun isValidLogin(emailOrPhone: EditText, password: EditText) : Boolean {
+    private fun isValidLogin(emailOrPhone: EditText, password: EditText): Boolean {
         val emailOrPhoneInput = emailOrPhone.text.toString().trim()
         val passwordInput = password.text.toString().trim()
         val loginInfo = db.getByEmail(emailOrPhoneInput)
 
-        if (loginInfo == null){
-            Toast.makeText(this, "E-Mail doesn't exist, please create a new account",
-                Toast.LENGTH_SHORT).show()
+        if (loginInfo == null) {
+            Toast.makeText(
+                this, "E-Mail doesn't exist, please create a new account",
+                Toast.LENGTH_SHORT
+            ).show()
             return false
         }
 
         val loginInfoEmailFound = loginInfo[0]
 
         if (loginInfoEmailFound.password != passwordInput) {
-            Toast.makeText(this, "Password is wrong",
-                Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                this, "Password is wrong",
+                Toast.LENGTH_SHORT
+            ).show()
             return false
         }
 

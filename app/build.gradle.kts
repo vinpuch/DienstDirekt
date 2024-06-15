@@ -50,7 +50,9 @@ dependencies {
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.play.services.maps)
     implementation(libs.androidx.foundation.android)
+    implementation("com.google.android.material:material:1.4.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
 }

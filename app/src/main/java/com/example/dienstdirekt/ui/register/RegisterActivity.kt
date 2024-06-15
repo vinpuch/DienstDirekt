@@ -24,52 +24,40 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var password: EditText
     private lateinit var passwordRepeat: EditText
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+ override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
 
-        val buttonPage2: ImageButton = findViewById(R.id.buttonPage2)
+    binding = ActivityRegistercompanyBinding.inflate(layoutInflater)
+    setContentView(binding.root)
 
-        buttonPage2.setOnClickListener {
+    companyName = findViewById(R.id.textUnternehmennamen)
+    eMail = findViewById(R.id.textEmail)
+    phoneNumber = findViewById(R.id.textHandynummer)
+    password = findViewById(R.id.textPasswort)
+    passwordRepeat = findViewById(R.id.textPasswortNochmal)
+
+    registerButton = findViewById(R.id.weiter_button_registrieren)
+    registerButton.setOnClickListener {
+        val companyNameInput = companyName.text.toString().trim()
+        val eMailInput = eMail.text.toString().trim()
+        val phoneNumberInput = phoneNumber.text.toString().trim()
+        val passwordInput = password.text.toString().trim()
+        val passwordRepeatInput = passwordRepeat.text.toString().trim()
+
+        if (isValidRegistration(companyNameInput, eMailInput, phoneNumberInput, passwordInput,
+                passwordRepeatInput)) {
+            Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show()
+            val registerInput = RegisterInput(companyNameInput, eMailInput, phoneNumberInput,
+                passwordInput)
+            db.insertCompany(registerInput)
+            Toast.makeText(this, "DB angelegt", Toast.LENGTH_SHORT).show()
+
+            // Navigate to UnternehmenActivity after successful registration
             val intent = Intent(this, UnternehmenActivity::class.java)
             startActivity(intent)
         }
-        binding = ActivityRegistercompanyBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        db = RegisterDatabaseHelper(this)
-
-        crossLeft = findViewById(R.id.imageView8)
-        crossLeft.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-
-        companyName = findViewById(R.id.textUnternehmennamen)
-        eMail = findViewById(R.id.textEmail)
-        phoneNumber = findViewById(R.id.textHandynummer)
-        password = findViewById(R.id.textPasswort)
-        passwordRepeat = findViewById(R.id.textPasswortNochmal)
-
-
-        registerButton = findViewById(R.id.buttonPage2)
-        registerButton.setOnClickListener {
-            val companyNameInput = companyName.text.toString().trim()
-            val eMailInput = eMail.text.toString().trim()
-            val phoneNumberInput = phoneNumber.text.toString().trim()
-            val passwordInput = password.text.toString().trim()
-            val passwordRepeatInput = passwordRepeat.text.toString().trim()
-
-            if (isValidRegistration(companyNameInput, eMailInput, phoneNumberInput, passwordInput,
-                    passwordRepeatInput)) {
-                Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show()
-                val registerInput = RegisterInput(companyNameInput, eMailInput, phoneNumberInput,
-                    passwordInput)
-                db.insertCompany(registerInput)
-                finish()
-                Toast.makeText(this, "DB angelegt", Toast.LENGTH_SHORT).show()
-            }
-        }
-
     }
+}
 
     private fun isValidRegistration(companyNameInput: String, eMailInput: String,  phoneNumberInput: String,
                                     passwordInput: String, passwordRepeatInput: String) : Boolean {

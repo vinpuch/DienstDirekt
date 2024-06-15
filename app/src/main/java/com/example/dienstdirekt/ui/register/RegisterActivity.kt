@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.dienstdirekt.MainActivity
 import com.example.dienstdirekt.R
 import com.example.dienstdirekt.databinding.ActivityRegistercompanyBinding
+import com.example.dienstdirekt.ui.unternehmen.UnternehmenActivity
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -23,51 +24,40 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var password: EditText
     private lateinit var passwordRepeat: EditText
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+ override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
 
-        binding = ActivityRegistercompanyBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        db = RegisterDatabaseHelper(this)
+    binding = ActivityRegistercompanyBinding.inflate(layoutInflater)
+    setContentView(binding.root)
 
-        crossLeft = findViewById(R.id.imageView8)
-        crossLeft.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+    companyName = findViewById(R.id.textUnternehmennamen)
+    eMail = findViewById(R.id.textEmail)
+    phoneNumber = findViewById(R.id.textHandynummer)
+    password = findViewById(R.id.textPasswort)
+    passwordRepeat = findViewById(R.id.textPasswortNochmal)
+
+    registerButton = findViewById(R.id.weiter_button_registrieren)
+    registerButton.setOnClickListener {
+        val companyNameInput = companyName.text.toString().trim()
+        val eMailInput = eMail.text.toString().trim()
+        val phoneNumberInput = phoneNumber.text.toString().trim()
+        val passwordInput = password.text.toString().trim()
+        val passwordRepeatInput = passwordRepeat.text.toString().trim()
+
+        if (isValidRegistration(companyNameInput, eMailInput, phoneNumberInput, passwordInput,
+                passwordRepeatInput)) {
+            Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show()
+            val registerInput = RegisterInput(companyNameInput, eMailInput, phoneNumberInput,
+                passwordInput)
+            db.insertCompany(registerInput)
+            Toast.makeText(this, "DB angelegt", Toast.LENGTH_SHORT).show()
+
+            // Navigate to UnternehmenActivity after successful registration
+            val intent = Intent(this, UnternehmenActivity::class.java)
             startActivity(intent)
         }
-
-        companyName = findViewById(R.id.textUnternehmenname)
-        eMail = findViewById(R.id.textEmail)
-        phoneNumber = findViewById(R.id.textHandynummer)
-        password = findViewById(R.id.textPasswort)
-        passwordRepeat = findViewById(R.id.textPasswortNochmal)
-
-
-        registerButton = findViewById(R.id.buttonPage2)
-        registerButton.setOnClickListener {
-            val companyNameInput = companyName.text.toString().trim()
-            val eMailInput = eMail.text.toString().trim()
-            val phoneNumberInput = phoneNumber.text.toString().trim()
-            val passwordInput = password.text.toString().trim()
-            val passwordRepeatInput = passwordRepeat.text.toString().trim()
-
-            if (isValidRegistration(companyNameInput, eMailInput, phoneNumberInput, passwordInput,
-                    passwordRepeatInput)) {
-                if (!db.checkIfExists(companyNameInput, eMailInput, phoneNumberInput)){
-                    Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show()
-                    val registerInput = RegisterInput(companyNameInput, eMailInput, phoneNumberInput,
-                        passwordInput)
-                    db.insertCompany(registerInput)
-                    finish()
-                    Toast.makeText(this, "DB angelegt", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(this, "company name, email or phonenumber already used",
-                        Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
-
     }
+}
 
     private fun isValidRegistration(companyNameInput: String, eMailInput: String,  phoneNumberInput: String,
                                     passwordInput: String, passwordRepeatInput: String) : Boolean {

@@ -7,21 +7,21 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import com.example.dienstdirekt.MainDatabaseHelper
 
-class RegisterDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null,
-    DATABASE_VERSION){
+class RegisterDatabaseHelper(context: Context) : SQLiteOpenHelper(
+    context, DATABASE_NAME, null,
+    DATABASE_VERSION
+) {
 
-    companion object{
+    companion object {
         private const val DATABASE_NAME = "dienstdirekt.db"
         private const val DATABASE_VERSION = 1
         private const val TABLE_NAME = "dienstleister"
 
         private const val COLUMN_ID = "dienstleister_id"
-        private const val COLUMN_NAME= "name"
+        private const val COLUMN_NAME = "name"
         private const val COLUMN_EMAIL = "email"
         private const val COLUMN_PHONENUMBER = "telefonnummer"
         private const val COLUMN_PASSWORD = "passwort"
-
-
     }
 
     override fun onCreate(db: SQLiteDatabase?) {

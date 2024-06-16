@@ -47,15 +47,14 @@ class RegisterActivity : AppCompatActivity() {
 
         if (isValidRegistration(companyNameInput, eMailInput, phoneNumberInput, passwordInput,
                 passwordRepeatInput)) {
+            // Navigate to UnternehmenActivity after successful registration
+            val intent = Intent(this, UnternehmenActivity::class.java)
+            startActivity(intent)
             Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show()
             val registerInput = RegisterInput(companyNameInput, eMailInput, phoneNumberInput,
                 passwordInput)
             db.insertCompany(registerInput)
             Toast.makeText(this, "DB angelegt", Toast.LENGTH_SHORT).show()
-
-            // Navigate to UnternehmenActivity after successful registration
-            val intent = Intent(this, UnternehmenActivity::class.java)
-            startActivity(intent)
         }
     }
 }

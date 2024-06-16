@@ -12,13 +12,13 @@ import com.example.dienstdirekt.databinding.ActivityMainBinding
 import com.example.dienstdirekt.ui.categories.CategoriesActivity
 import com.example.dienstdirekt.ui.register.RegisterActivity
 import com.example.dienstdirekt.ui.unternehmen.UnternehmenActivity
+import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var button: ImageButton
-    private lateinit var googleLogin: Button
-    private lateinit var noAccountTextView: TextView
+    private lateinit var alsGastButton: TextView
     private lateinit var db: MainDatabaseHelper
 
     private lateinit var emailOrPhone: EditText
@@ -38,8 +38,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        googleLogin = findViewById(R.id.googleLogin)
-        googleLogin.setOnClickListener {
+        alsGastButton = findViewById(R.id.alsGastButton)
+        alsGastButton.setOnClickListener {
             val intent = Intent(this, CategoriesActivity::class.java)
             startActivity(intent)
         }

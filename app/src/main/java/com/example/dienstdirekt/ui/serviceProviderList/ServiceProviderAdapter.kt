@@ -11,10 +11,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.dienstdirekt.R
 import com.example.dienstdirekt.ui.register.RegisterInput
 
-class ServiceProviderAdapter(private var providerList: List<RegisterInput>, private val context: Context) :
-    RecyclerView.Adapter<ServiceProviderAdapter.ServiceProviderViewHolder>() {
+class ServiceProviderAdapter(
+    private var providerList: List<RegisterInput>,
+    private val context: Context
+) : RecyclerView.Adapter<ServiceProviderAdapter.ServiceProviderViewHolder>() {
 
-    class ServiceProviderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ServiceProviderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleTextView: TextView = itemView.findViewById(R.id.unternehmenName)
         val contentTextView: TextView = itemView.findViewById(R.id.unternehmenBeschreibung)
         val serviceProviderImage: ImageView = itemView.findViewById(R.id.unternehmenBild)
@@ -28,12 +30,11 @@ class ServiceProviderAdapter(private var providerList: List<RegisterInput>, priv
     override fun getItemCount(): Int = providerList.size
 
     override fun onBindViewHolder(holder: ServiceProviderViewHolder, position: Int) {
-        Log.d("YURRRPOSITION", position.toString())
         val serviceProvider = providerList[position]
         holder.titleTextView.text = serviceProvider.companyName
         holder.contentTextView.text = serviceProvider.email
-
-        Log.d("YURR", itemCount.toString())
+        // You can also set the image if you have a mechanism to load images
+        // holder.serviceProviderImage.setImageResource(serviceProvider.imageResource)
     }
 
     fun refreshData(newServiceProvider: List<RegisterInput>) {

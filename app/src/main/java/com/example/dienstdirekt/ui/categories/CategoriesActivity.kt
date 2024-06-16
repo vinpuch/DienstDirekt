@@ -6,9 +6,10 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dienstdirekt.MainActivity
-import com.example.dienstdirekt.ui.serviceProviderList.SeviceProviderList
 import com.example.dienstdirekt.databinding.ActivityCategoriesBinding
 import com.example.dienstdirekt.R
+import com.example.dienstdirekt.ui.serviceProviderList.ServiceProviderListActivity
+
 class CategoriesActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCategoriesBinding
@@ -29,7 +30,8 @@ class CategoriesActivity : AppCompatActivity() {
 
         montageButton = findViewById(R.id.montageButton)
         montageButton.setOnClickListener {
-            val intent = Intent(this, SeviceProviderList::class.java )
+            val intent = Intent(this, ServiceProviderListActivity::class.java )
+            startActivity(intent)
         }
     }
 }

@@ -7,7 +7,6 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.dienstdirekt.MainActivity
 import com.example.dienstdirekt.R
 import com.example.dienstdirekt.databinding.ActivityRegistercompanyBinding
 import com.example.dienstdirekt.ui.unternehmen.UnternehmenActivity

@@ -25,6 +25,7 @@
         <activity android:name=".ui.register.RegisterActivity" />
         <activity android:name=".ui.unternehmen.UnternehmenActivity" />
         <activity android:name=".ui.categories.CategoriesActivity" />
+        <activity android:name=".ui.serviceProviderList.ServiceProviderListActivity" />
     </application>
 
 </manifest>

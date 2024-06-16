@@ -56,7 +56,7 @@ class RegisterDatabaseHelper(context: Context) : SQLiteOpenHelper(
     }
 
     fun checkIfExists(companyName: String, email: String, phoneNumber: String): Boolean {
-        val db = writableDatabase
+        val db = readableDatabase
         val query = "SELECT * FROM dienstleister WHERE name=? OR email=? OR telefonnummer=?"
         val cursor = db.rawQuery(query, arrayOf(companyName, email, phoneNumber))
 
@@ -69,5 +69,26 @@ class RegisterDatabaseHelper(context: Context) : SQLiteOpenHelper(
         cursor.close()
         db.close()
         return true
+    }
+
+    fun getAll() : List<RegisterInput> {
+        val companyList = mutableListOf<RegisterInput>()
+        val db = readableDatabase
+        val query = "SELECT * FROM $TABLE_NAME"
+        val cursor = db.rawQuery(query, null)
+
+        while (cursor.moveToNext()) {
+            val companyName = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NAME))
+            val email = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_EMAIL))
+            val phoneNumber = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PHONENUMBER))
+            val password = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PASSWORD))
+
+            val companyData = RegisterInput(companyName, email, phoneNumber, password)
+            companyList.add(companyData)
+        }
+
+        cursor.close()
+        db.close()
+        return companyList
     }
 }

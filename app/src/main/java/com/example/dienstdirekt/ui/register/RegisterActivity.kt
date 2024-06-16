@@ -30,6 +30,7 @@ class RegisterActivity : AppCompatActivity() {
     binding = ActivityRegistercompanyBinding.inflate(layoutInflater)
     setContentView(binding.root)
 
+    db = RegisterDatabaseHelper(this)
     companyName = findViewById(R.id.textUnternehmennamen)
     eMail = findViewById(R.id.textEmail)
     phoneNumber = findViewById(R.id.textHandynummer)

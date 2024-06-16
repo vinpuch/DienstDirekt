@@ -91,4 +91,43 @@ class RegisterDatabaseHelper(context: Context) : SQLiteOpenHelper(
         db.close()
         return companyList
     }
+
+    fun getOrderByName(asc: Boolean) : List<RegisterInput> {
+        val companyList = mutableListOf<RegisterInput>()
+        val db = readableDatabase
+        if (asc) {
+            val query = "SELECT * FROM $TABLE_NAME ORDER BY $COLUMN_NAME ASC"
+            val cursor = db.rawQuery(query, null)
+
+            while (cursor.moveToNext()) {
+                val companyName = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NAME))
+                val email = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_EMAIL))
+                val phoneNumber = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PHONENUMBER))
+                val password = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PASSWORD))
+
+                val companyData = RegisterInput(companyName, email, phoneNumber, password)
+                companyList.add(companyData)
+            }
+
+            cursor.close()
+        } else {
+            val query = "SELECT * FROM $TABLE_NAME ORDER BY $COLUMN_NAME DESC"
+            val cursor = db.rawQuery(query, null)
+
+            while (cursor.moveToNext()) {
+                val companyName = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NAME))
+                val email = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_EMAIL))
+                val phoneNumber = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PHONENUMBER))
+                val password = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PASSWORD))
+
+                val companyData = RegisterInput(companyName, email, phoneNumber, password)
+                companyList.add(companyData)
+            }
+
+            cursor.close()
+        }
+
+        db.close()
+        return companyList
+    }
 }

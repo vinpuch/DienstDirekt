@@ -12,7 +12,7 @@ import com.example.dienstdirekt.databinding.ActivityMainBinding
 import com.example.dienstdirekt.ui.categories.CategoriesActivity
 import com.example.dienstdirekt.ui.register.RegisterActivity
 import com.example.dienstdirekt.ui.unternehmen.UnternehmenActivity
-import org.w3c.dom.Text
+import org.mindrot.jbcrypt.BCrypt
 
 class MainActivity : AppCompatActivity() {
 
@@ -56,7 +56,6 @@ class MainActivity : AppCompatActivity() {
         password = findViewById(R.id.passwordText)
     }
 
-
     private fun isValidLogin(emailOrPhone: EditText, password: EditText): Boolean {
         val emailOrPhoneInput = emailOrPhone.text.toString().trim()
         val passwordInput = password.text.toString().trim()
@@ -72,7 +71,7 @@ class MainActivity : AppCompatActivity() {
 
         val loginInfoEmailFound = loginInfo[0]
 
-        if (loginInfoEmailFound.password != passwordInput) {
+        if (!BCrypt.checkpw(passwordInput, loginInfoEmailFound.password)) {
             Toast.makeText(
                 this, "Password is wrong",
                 Toast.LENGTH_SHORT

@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.dienstdirekt.R
 import com.example.dienstdirekt.databinding.ActivityRegistercompanyBinding
 import com.example.dienstdirekt.ui.unternehmen.UnternehmenActivity
+import org.mindrot.jbcrypt.BCrypt
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -23,73 +24,67 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var password: EditText
     private lateinit var passwordRepeat: EditText
 
- override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-    binding = ActivityRegistercompanyBinding.inflate(layoutInflater)
-    setContentView(binding.root)
+        binding = ActivityRegistercompanyBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    db = RegisterDatabaseHelper(this)
-    companyName = findViewById(R.id.textUnternehmennamen)
-    eMail = findViewById(R.id.textEmail)
-    phoneNumber = findViewById(R.id.textHandynummer)
-    password = findViewById(R.id.textPasswort)
-    passwordRepeat = findViewById(R.id.textPasswortNochmal)
+        db = RegisterDatabaseHelper(this)
+        companyName = findViewById(R.id.textUnternehmennamen)
+        eMail = findViewById(R.id.textEmail)
+        phoneNumber = findViewById(R.id.textHandynummer)
+        password = findViewById(R.id.textPasswort)
+        passwordRepeat = findViewById(R.id.textPasswortNochmal)
 
-    registerButton = findViewById(R.id.weiter_button_registrieren)
-    registerButton.setOnClickListener {
-        val companyNameInput = companyName.text.toString().trim()
-        val eMailInput = eMail.text.toString().trim()
-        val phoneNumberInput = phoneNumber.text.toString().trim()
-        val passwordInput = password.text.toString().trim()
-        val passwordRepeatInput = passwordRepeat.text.toString().trim()
+        registerButton = findViewById(R.id.weiter_button_registrieren)
+        registerButton.setOnClickListener {
+            val companyNameInput = companyName.text.toString().trim()
+            val eMailInput = eMail.text.toString().trim()
+            val phoneNumberInput = phoneNumber.text.toString().trim()
+            val passwordInput = password.text.toString().trim()
+            val passwordRepeatInput = passwordRepeat.text.toString().trim()
 
-        if (isValidRegistration(companyNameInput, eMailInput, phoneNumberInput, passwordInput,
-                passwordRepeatInput)) {
-            // Navigate to UnternehmenActivity after successful registration
-            val intent = Intent(this, UnternehmenActivity::class.java)
-            startActivity(intent)
-            Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show()
-            val registerInput = RegisterInput(companyNameInput, eMailInput, phoneNumberInput,
-                passwordInput)
-            db.insertCompany(registerInput)
-            Toast.makeText(this, "DB angelegt", Toast.LENGTH_SHORT).show()
+            if (isValidRegistration(companyNameInput, eMailInput, phoneNumberInput, passwordInput, passwordRepeatInput)) {
+                // Hash the password before saving to the database
+                val hashedPassword = BCrypt.hashpw(passwordInput, BCrypt.gensalt())
+
+                val registerInput = RegisterInput(companyNameInput, eMailInput, phoneNumberInput, hashedPassword)
+                db.insertCompany(registerInput)
+
+                // Navigate to UnternehmenActivity after successful registration
+                val intent = Intent(this, UnternehmenActivity::class.java)
+                startActivity(intent)
+                Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "DB angelegt", Toast.LENGTH_SHORT).show()
+            }
         }
     }
-}
 
-    private fun isValidRegistration(companyNameInput: String, eMailInput: String,  phoneNumberInput: String,
-                                    passwordInput: String, passwordRepeatInput: String) : Boolean {
+    private fun isValidRegistration(companyNameInput: String, eMailInput: String, phoneNumberInput: String, passwordInput: String, passwordRepeatInput: String): Boolean {
         if (!isValidCompanyName(companyNameInput)) {
-            Toast.makeText(this, "please enter a valid Company Name",
-                Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "please enter a valid Company Name", Toast.LENGTH_SHORT).show()
             return false
         }
 
         if (!isValidEmail(eMailInput)) {
-            Toast.makeText(this, "please enter a valid email",
-                Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "please enter a valid email", Toast.LENGTH_SHORT).show()
             return false
         }
 
         if (!isValidPhoneNumber(phoneNumberInput)) {
-            Toast.makeText(this, "please enter a valid phone number",
-                Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "please enter a valid phone number", Toast.LENGTH_SHORT).show()
             return false
         }
 
         if (!isValidPassword(passwordInput)) {
-            Toast.makeText(this, "please enter a valid password",
-                Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "please enter a valid password", Toast.LENGTH_SHORT).show()
             return false
         }
 
-        if (!isValidPassword(passwordRepeatInput)) {
-            if (passwordRepeatInput != passwordInput) {
-                Toast.makeText(this, "passwords do not match",
-                    Toast.LENGTH_SHORT).show()
-                return false
-            }
+        if (passwordRepeatInput != passwordInput) {
+            Toast.makeText(this, "passwords do not match", Toast.LENGTH_SHORT).show()
+            return false
         }
 
         return true
@@ -107,13 +102,7 @@ class RegisterActivity : AppCompatActivity() {
         return phoneNumber.matches(Regex("^\\+?[0-9. ()-]{7,15}\$"))
     }
 
-
-    // password is at least 8 characters long and contains at least one uppercase letter,
-    // one lowercase letter, one digit, and one special character
-    // Example: Password1!
     private fun isValidPassword(password: String): Boolean {
-        return password.matches(
-            Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@\$!%*?&])[A-Za-z\\d@\$!%*?&]{8,}$")
-        )
+        return password.matches(Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@\$!%*?&])[A-Za-z\\d@\$!%*?&]{8,}$"))
     }
 }

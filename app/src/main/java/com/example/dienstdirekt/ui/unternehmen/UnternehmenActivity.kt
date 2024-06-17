@@ -1,22 +1,24 @@
 package com.example.dienstdirekt.ui.unternehmen
 
-import android.content.ContentValues
-import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.Color
+import android.graphics.Canvas
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.BitmapDrawable
+import android.graphics.Color
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
-import android.text.Editable
-import android.text.TextWatcher
-import android.view.Gravity
+import android.content.ContentValues
+import android.content.Intent
 import android.widget.EditText
-import android.widget.ImageView
 import android.widget.Toast
+import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dienstdirekt.databinding.ActivityUnternehmensprofilBinding
-import com.example.dienstdirekt.ui.register.RegisterDatabaseHelper
 import java.io.ByteArrayOutputStream
+import android.text.Editable
+import android.text.TextWatcher
+
 
 class UnternehmenActivity : AppCompatActivity() {
 
@@ -125,18 +127,11 @@ class UnternehmenActivity : AppCompatActivity() {
             val db = UnternehmenDatabaseHelper(this).writableDatabase
 
             // Convert the image and certificate to byte arrays
-            val picture = (binding.pictureButton.background as BitmapDrawable).bitmap
-            val pictureStream = ByteArrayOutputStream()
-            picture.compress(Bitmap.CompressFormat.PNG, 100, pictureStream)
-            val pictureByteArray = pictureStream.toByteArray()
-
-            val certificate = (binding.certificateButton.background as BitmapDrawable).bitmap
-            val certificateStream = ByteArrayOutputStream()
-            certificate.compress(Bitmap.CompressFormat.PNG, 100, certificateStream)
-            val certificateByteArray = certificateStream.toByteArray()
+            val pictureByteArray = getByteArrayFromDrawable(binding.pictureButton.background)
+            val certificateByteArray = getByteArrayFromDrawable(binding.certificateButton.background)
 
             // Get the description
-            val beschreibung = binding.descriptionView.toString()
+            val beschreibung = binding.editText.text.toString()
 
             val values = ContentValues().apply {
                 put("name", name)
@@ -163,4 +158,28 @@ class UnternehmenActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun getByteArrayFromDrawable(drawable: Drawable): ByteArray? {
+        return when (drawable) {
+            is BitmapDrawable -> {
+                val bitmap = drawable.bitmap
+                val stream = ByteArrayOutputStream()
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+                stream.toByteArray()
+            }
+            is GradientDrawable -> {
+                val width = 100 // Specify the desired width
+                val height = 100 // Specify the desired height
+                val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+                val canvas = Canvas(bitmap)
+                drawable.setBounds(0, 0, width, height)
+                drawable.draw(canvas)
+                val stream = ByteArrayOutputStream()
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+                stream.toByteArray()
+            }
+            else -> null // Handle other drawable types if necessary
+        }
+    }
+
 }

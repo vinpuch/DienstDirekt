@@ -10,11 +10,12 @@ import com.example.dienstdirekt.databinding.ActivityDienstleistungenBinding
 import com.example.dienstdirekt.ui.register.RegisterDatabaseHelper
 import com.example.dienstdirekt.R
 import com.example.dienstdirekt.ui.categories.CategoriesActivity
+import com.example.dienstdirekt.ui.unternehmen.UnternehmenDatabaseHelper
 
 class ServiceProviderListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDienstleistungenBinding
     private lateinit var serviceProviderAdapter: ServiceProviderAdapter
-    private lateinit var db: RegisterDatabaseHelper
+    private lateinit var db: UnternehmenDatabaseHelper
     private lateinit var backButton: ImageButton
     private lateinit var buttonAZ : Button
     private lateinit var buttonZA : Button
@@ -40,7 +41,7 @@ class ServiceProviderListActivity : AppCompatActivity() {
         buttonZA.setOnClickListener {
             getDataOrderByNameAsc(false)
         }
-        db = RegisterDatabaseHelper(this)
+        db = UnternehmenDatabaseHelper(this)
 
         // Initialize the adapter with an empty list
         serviceProviderAdapter = ServiceProviderAdapter(emptyList(), this)

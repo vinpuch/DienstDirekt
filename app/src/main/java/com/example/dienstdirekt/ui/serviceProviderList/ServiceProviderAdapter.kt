@@ -1,6 +1,7 @@
 package com.example.dienstdirekt.ui.serviceProviderList
 
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,9 +11,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dienstdirekt.R
 import com.example.dienstdirekt.ui.register.RegisterInput
+import com.example.dienstdirekt.ui.unternehmen.UnternehmenData
 
 class ServiceProviderAdapter(
-    private var providerList: List<RegisterInput>,
+    private var providerList: List<UnternehmenData>,
     private val context: Context
 ) : RecyclerView.Adapter<ServiceProviderAdapter.ServiceProviderViewHolder>() {
 
@@ -31,13 +33,24 @@ class ServiceProviderAdapter(
 
     override fun onBindViewHolder(holder: ServiceProviderViewHolder, position: Int) {
         val serviceProvider = providerList[position]
-        holder.titleTextView.text = serviceProvider.companyName
-        holder.contentTextView.text = serviceProvider.email
-        // You can also set the image if you have a mechanism to load images
-        // holder.serviceProviderImage.setImageResource(serviceProvider.imageResource)
+        holder.titleTextView.text = serviceProvider.name
+        holder.contentTextView.text = serviceProvider.beschreibung
+
+        // Convert byteArray to Bitmap and set it to the ImageView
+        if (serviceProvider.picture != null) {
+            val bitmap = BitmapFactory.decodeByteArray(serviceProvider.picture, 0,
+                serviceProvider.picture.size)
+            holder.serviceProviderImage.setImageBitmap(bitmap)
+        } else {
+            // Handle case where picture ByteArray is null or empty
+            // For example, set a placeholder image or hide the ImageView
+            holder.serviceProviderImage.setImageDrawable(null) // Clears any existing image
+            // Alternatively, you can set a placeholder image:
+            // holder.serviceProviderImage.setImageResource(R.drawable.placeholder_image)
+        }
     }
 
-    fun refreshData(newServiceProvider: List<RegisterInput>) {
+    fun refreshData(newServiceProvider: List<UnternehmenData>) {
         providerList = newServiceProvider
         notifyDataSetChanged()
     }

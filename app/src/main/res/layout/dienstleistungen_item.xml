@@ -23,7 +23,7 @@
             android:layout_height="100dp"
             android:layout_gravity="start|center_vertical"
             android:background="@drawable/rounded_corner_button"
-            android:backgroundTint="@color/greenery" />
+            android:backgroundTint="#D9D9D9" />
 
         <TextView
             android:id="@+id/unternehmenName"

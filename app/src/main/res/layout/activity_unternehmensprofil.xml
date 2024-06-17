@@ -14,7 +14,7 @@
         android:background="@drawable/textview_border"
         android:fontFamily="sans-serif"
         android:gravity="start"
-        android:hint="Ort:  Beispiel: Straße, Stadt, PLZ"
+        android:hint="Adresse: Straße 123, Stadt, 12345"
         android:textAlignment="viewStart"
         android:textAllCaps="false"
         android:textColor="#808080"
@@ -197,13 +197,14 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:id="@+id/pictureButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#FFFFFF"
+            android:background="@drawable/button_background"
             android:text="Bild hochladen"
-            android:textAllCaps="false" />
+            android:elevation="4dp"
+            />
 
     </FrameLayout>
 

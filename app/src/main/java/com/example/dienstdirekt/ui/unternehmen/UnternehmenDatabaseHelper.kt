@@ -7,8 +7,6 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Log
-import com.example.dienstdirekt.ui.register.RegisterDatabaseHelper
-import com.example.dienstdirekt.ui.register.RegisterInput
 
 class UnternehmenDatabaseHelper(context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
@@ -39,15 +37,9 @@ class UnternehmenDatabaseHelper(context: Context) :
     @SuppressLint("Range")
     fun retrievePictureFromDatabase(context: Context, companyName: Long): Bitmap? {
         val db = readableDatabase
-
-        // Define a projection (columns to fetch)
         val projection = arrayOf("picture")
-
-        // Define a selection (query condition)
         val selection = "name = ?"
         val selectionArgs = arrayOf(companyName.toString())
-
-        // Perform the query
         val cursor = db.query(
             "unternehmen",   // Table name
             projection,      // Columns to fetch
@@ -59,17 +51,11 @@ class UnternehmenDatabaseHelper(context: Context) :
         )
 
         var pictureBitmap: Bitmap? = null
-
-        // Check if cursor has data
         if (cursor.moveToFirst()) {
-            // Get the BLOB data
             val pictureByteArray = cursor.getBlob(cursor.getColumnIndex("picture"))
-
-            // Convert the BLOB data to Bitmap
             pictureBitmap = BitmapFactory.decodeByteArray(pictureByteArray, 0, pictureByteArray.size)
         }
 
-        // Close the cursor and database connection
         cursor.close()
         db.close()
 
@@ -86,15 +72,9 @@ class UnternehmenDatabaseHelper(context: Context) :
             val companyName = cursor.getString(cursor.getColumnIndexOrThrow("name"))
             val dienstleistung = cursor.getString(cursor.getColumnIndexOrThrow("dienstleistung"))
             val ort = cursor.getString(cursor.getColumnIndexOrThrow("ort"))
-
-            // Retrieve picture as ByteArray
             val pictureByteArray = cursor.getBlob(cursor.getColumnIndexOrThrow("picture"))
-
-            // Retrieve certificate as ByteArray
             val certificateByteArray = cursor.getBlob(cursor.getColumnIndexOrThrow("certificate"))
-
             val beschreibung = cursor.getString(cursor.getColumnIndexOrThrow("beschreibung"))
-
             val companyData = UnternehmenData(companyName, dienstleistung, ort, pictureByteArray, certificateByteArray, beschreibung)
             companyList.add(companyData)
         }
@@ -115,15 +95,9 @@ class UnternehmenDatabaseHelper(context: Context) :
                 val companyName = cursor.getString(cursor.getColumnIndexOrThrow("name"))
                 val dienstleistung = cursor.getString(cursor.getColumnIndexOrThrow("dienstleistung"))
                 val ort = cursor.getString(cursor.getColumnIndexOrThrow("ort"))
-
-                // Retrieve picture as ByteArray
                 val pictureByteArray = cursor.getBlob(cursor.getColumnIndexOrThrow("picture"))
-
-                // Retrieve certificate as ByteArray
                 val certificateByteArray = cursor.getBlob(cursor.getColumnIndexOrThrow("certificate"))
-
                 val beschreibung = cursor.getString(cursor.getColumnIndexOrThrow("beschreibung"))
-
                 val companyData = UnternehmenData(companyName, dienstleistung, ort, pictureByteArray, certificateByteArray, beschreibung)
                 companyList.add(companyData)
             }
@@ -137,15 +111,9 @@ class UnternehmenDatabaseHelper(context: Context) :
                 val companyName = cursor.getString(cursor.getColumnIndexOrThrow("name"))
                 val dienstleistung = cursor.getString(cursor.getColumnIndexOrThrow("dienstleistung"))
                 val ort = cursor.getString(cursor.getColumnIndexOrThrow("ort"))
-
-                // Retrieve picture as ByteArray
                 val pictureByteArray = cursor.getBlob(cursor.getColumnIndexOrThrow("picture"))
-
-                // Retrieve certificate as ByteArray
                 val certificateByteArray = cursor.getBlob(cursor.getColumnIndexOrThrow("certificate"))
-
                 val beschreibung = cursor.getString(cursor.getColumnIndexOrThrow("beschreibung"))
-
                 val companyData = UnternehmenData(companyName, dienstleistung, ort, pictureByteArray, certificateByteArray, beschreibung)
                 companyList.add(companyData)
             }

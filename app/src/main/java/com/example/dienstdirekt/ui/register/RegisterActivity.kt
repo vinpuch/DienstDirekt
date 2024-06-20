@@ -59,7 +59,6 @@ class RegisterActivity : AppCompatActivity() {
                 val registerInput = RegisterInput(companyNameInput, eMailInput, phoneNumberInput, hashedPassword)
                 db.insertCompany(registerInput)
 
-                // Navigate to UnternehmenActivity after successful registration
                 val intent = Intent(this, UnternehmenActivity::class.java)
                 startActivity(intent)
                 Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show()

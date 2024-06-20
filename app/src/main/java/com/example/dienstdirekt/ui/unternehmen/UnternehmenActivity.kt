@@ -31,14 +31,8 @@ class UnternehmenActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         addTextChangedListenerToEditText(binding.editText)
-
-        // TextChangedListener für das Unternehmensnamenfeld
         addTextChangedListenerToEditText(binding.companyNameView)
-
-        // TextChangedListener für das Ortfeld
         addTextChangedListenerToEditText(binding.textViewLocation)
-
-        // TextChangedListener für das Dienstleistungsfeld
         addTextChangedListenerToEditText(binding.categoryView)
 
         binding.pictureButton.setOnClickListener {
@@ -83,9 +77,7 @@ class UnternehmenActivity : AppCompatActivity() {
             }
 
             override fun afterTextChanged(s: Editable) {
-                // Removed the code that changes the background color to red
                 if (isValidLocation(s.toString())) {
-                    // Reset the background color when the input is valid
                     editText.setBackgroundColor(Color.WHITE)
                 }
             }
@@ -111,7 +103,6 @@ class UnternehmenActivity : AppCompatActivity() {
 
 
     private fun isValidLocation(location: String): Boolean {
-        // Use a more specific regex for address validation
         return location.matches(Regex("^[a-zA-ZäöüÄÖÜß.\\-\\s]+\\s\\d+,\\s[a-zA-ZäöüÄÖÜß.\\-\\s]+,\\s\\d{5}$"))
     }
 
@@ -121,18 +112,12 @@ class UnternehmenActivity : AppCompatActivity() {
         } else if (!isValidLocation(ort)) {
             Toast.makeText(this, "Bitte geben Sie eine gültige Adresse ein", Toast.LENGTH_SHORT)
                 .show()
-            // Highlight the location field to indicate the error.
             binding.textViewLocation.setBackgroundColor(Color.RED)
         } else {
             val db = UnternehmenDatabaseHelper(this).writableDatabase
-
-            // Convert the image and certificate to byte arrays
             val pictureByteArray = getByteArrayFromDrawable(binding.pictureButton.background)
             val certificateByteArray = getByteArrayFromDrawable(binding.certificateButton.background)
-
-            // Get the description
             val beschreibung = binding.editText.text.toString()
-
             val values = ContentValues().apply {
                 put("name", name)
                 put("dienstleistung", dienstleistung)
@@ -168,8 +153,8 @@ class UnternehmenActivity : AppCompatActivity() {
                 stream.toByteArray()
             }
             is GradientDrawable -> {
-                val width = 100 // Specify the desired width
-                val height = 100 // Specify the desired height
+                val width = 100
+                val height = 100
                 val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
                 val canvas = Canvas(bitmap)
                 drawable.setBounds(0, 0, width, height)
@@ -178,7 +163,7 @@ class UnternehmenActivity : AppCompatActivity() {
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
                 stream.toByteArray()
             }
-            else -> null // Handle other drawable types if necessary
+            else -> null
         }
     }
 

@@ -2,7 +2,6 @@ package com.example.dienstdirekt
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
@@ -11,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.dienstdirekt.databinding.ActivityMainBinding
 import com.example.dienstdirekt.ui.categories.CategoriesActivity
 import com.example.dienstdirekt.ui.register.RegisterActivity
-import com.example.dienstdirekt.ui.unternehmen.UnternehmenActivity
 import org.mindrot.jbcrypt.BCrypt
 
 class MainActivity : AppCompatActivity() {
@@ -30,8 +28,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         db = MainDatabaseHelper(this)
-
-        // In Ihrer MainActivity
         val registerButton: TextView = findViewById(R.id.registrieren)
         registerButton.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)

@@ -1,5 +1,6 @@
 package com.example.dienstdirekt.ui.unternehmen
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
@@ -35,6 +36,7 @@ class UnternehmenDatabaseHelper(context: Context) :
         onCreate(db)
     }
 
+    @SuppressLint("Range")
     fun retrievePictureFromDatabase(context: Context, companyName: Long): Bitmap? {
         val db = readableDatabase
 

@@ -241,7 +241,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/crossLeftRegister"
         android:layout_width="42dp"
         android:layout_height="35dp"
         android:layout_marginStart="11dp"

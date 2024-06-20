@@ -7,6 +7,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.dienstdirekt.MainActivity
 import com.example.dienstdirekt.R
 import com.example.dienstdirekt.databinding.ActivityRegistercompanyBinding
 import com.example.dienstdirekt.ui.unternehmen.UnternehmenActivity
@@ -36,6 +37,12 @@ class RegisterActivity : AppCompatActivity() {
         phoneNumber = findViewById(R.id.textHandynummer)
         password = findViewById(R.id.textPasswort)
         passwordRepeat = findViewById(R.id.textPasswortNochmal)
+
+        crossLeft = findViewById(R.id.crossLeftRegister)
+        crossLeft.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         registerButton = findViewById(R.id.weiter_button_registrieren)
         registerButton.setOnClickListener {

@@ -13,7 +13,6 @@ import com.example.dienstdirekt.ui.register.RegisterActivity
 import org.mindrot.jbcrypt.BCrypt
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
     private lateinit var button: ImageButton
     private lateinit var alsGastButton: TextView
@@ -52,15 +51,19 @@ class MainActivity : AppCompatActivity() {
         password = findViewById(R.id.passwordText)
     }
 
-    private fun isValidLogin(emailOrPhone: EditText, password: EditText): Boolean {
+    private fun isValidLogin(
+        emailOrPhone: EditText,
+        password: EditText,
+    ): Boolean {
         val emailOrPhoneInput = emailOrPhone.text.toString().trim()
         val passwordInput = password.text.toString().trim()
         val loginInfo = db.getByEmail(emailOrPhoneInput)
 
         if (loginInfo == null) {
             Toast.makeText(
-                this, "E-Mail doesn't exist, please create a new account",
-                Toast.LENGTH_SHORT
+                this,
+                "E-Mail doesn't exist, please create a new account",
+                Toast.LENGTH_SHORT,
             ).show()
             return false
         }
@@ -69,8 +72,9 @@ class MainActivity : AppCompatActivity() {
 
         if (!BCrypt.checkpw(passwordInput, loginInfoEmailFound.password)) {
             Toast.makeText(
-                this, "Password is wrong",
-                Toast.LENGTH_SHORT
+                this,
+                "Password is wrong",
+                Toast.LENGTH_SHORT,
             ).show()
             return false
         }

@@ -6,8 +6,8 @@ import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.dienstdirekt.databinding.ActivityDienstleistungenBinding
 import com.example.dienstdirekt.R
+import com.example.dienstdirekt.databinding.ActivityDienstleistungenBinding
 import com.example.dienstdirekt.ui.categories.CategoriesActivity
 import com.example.dienstdirekt.ui.unternehmen.UnternehmenDatabaseHelper
 
@@ -16,8 +16,8 @@ class ServiceProviderListActivity : AppCompatActivity() {
     private lateinit var serviceProviderAdapter: ServiceProviderAdapter
     private lateinit var db: UnternehmenDatabaseHelper
     private lateinit var backButton: ImageButton
-    private lateinit var buttonAZ : Button
-    private lateinit var buttonZA : Button
+    private lateinit var buttonAZ: Button
+    private lateinit var buttonZA: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

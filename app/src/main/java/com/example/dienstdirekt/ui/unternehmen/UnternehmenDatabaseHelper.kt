@@ -16,7 +16,8 @@ class UnternehmenDatabaseHelper(context: Context) :
     }
 
     override fun onCreate(db: SQLiteDatabase) {
-        val CREATE_TABLE_QUERY = "CREATE TABLE IF NOT EXISTS unternehmen (" +
+        val CREATE_TABLE_QUERY =
+            "CREATE TABLE IF NOT EXISTS unternehmen (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "name TEXT," +
                 "dienstleistung TEXT," +
@@ -29,26 +30,34 @@ class UnternehmenDatabaseHelper(context: Context) :
         Log.d("TEST", "Datenbank wurde angelegt")
     }
 
-    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+    override fun onUpgrade(
+        db: SQLiteDatabase,
+        oldVersion: Int,
+        newVersion: Int,
+    ) {
         db.execSQL("DROP TABLE IF EXISTS unternehmen")
         onCreate(db)
     }
 
     @SuppressLint("Range")
-    fun retrievePictureFromDatabase(context: Context, companyName: Long): Bitmap? {
+    fun retrievePictureFromDatabase(
+        context: Context,
+        companyName: Long,
+    ): Bitmap? {
         val db = readableDatabase
         val projection = arrayOf("picture")
         val selection = "name = ?"
         val selectionArgs = arrayOf(companyName.toString())
-        val cursor = db.query(
-            "unternehmen",   // Table name
-            projection,      // Columns to fetch
-            selection,       // WHERE clause
-            selectionArgs,   // WHERE clause arguments
-            null,            // GROUP BY
-            null,            // HAVING
-            null             // ORDER BY
-        )
+        val cursor =
+            db.query(
+                "unternehmen", // Table name
+                projection, // Columns to fetch
+                selection, // WHERE clause
+                selectionArgs, // WHERE clause arguments
+                null, // GROUP BY
+                null, // HAVING
+                null, // ORDER BY
+            )
 
         var pictureBitmap: Bitmap? = null
         if (cursor.moveToFirst()) {
@@ -84,7 +93,7 @@ class UnternehmenDatabaseHelper(context: Context) :
         return companyList
     }
 
-    fun getOrderByName(asc: Boolean) : List<UnternehmenData> {
+    fun getOrderByName(asc: Boolean): List<UnternehmenData> {
         val companyList = mutableListOf<UnternehmenData>()
         val db = readableDatabase
         if (asc) {

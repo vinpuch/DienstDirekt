@@ -14,7 +14,6 @@ import com.example.dienstdirekt.ui.unternehmen.UnternehmenActivity
 import org.mindrot.jbcrypt.BCrypt
 
 class RegisterActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityRegistercompanyBinding
     private lateinit var db: RegisterDatabaseHelper
     private lateinit var registerButton: ImageButton
@@ -67,7 +66,13 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun isValidRegistration(companyNameInput: String, eMailInput: String, phoneNumberInput: String, passwordInput: String, passwordRepeatInput: String): Boolean {
+    private fun isValidRegistration(
+        companyNameInput: String,
+        eMailInput: String,
+        phoneNumberInput: String,
+        passwordInput: String,
+        passwordRepeatInput: String,
+    ): Boolean {
         if (!isValidCompanyName(companyNameInput)) {
             Toast.makeText(this, "please enter a valid Company Name", Toast.LENGTH_SHORT).show()
             return false

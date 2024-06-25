@@ -12,7 +12,7 @@ class MainDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
 
     companion object{
         private const val DATABASE_NAME = "dienstdirekt.db"
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 2
         private const val TABLE_NAME = "dienstleister"
 
         private const val COLUMN_ID = "dienstleister_id"

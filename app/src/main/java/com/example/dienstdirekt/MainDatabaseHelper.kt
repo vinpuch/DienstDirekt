@@ -3,6 +3,7 @@ package com.example.dienstdirekt
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 import com.example.dienstdirekt.ui.register.RegisterInput
 
 class MainDatabaseHelper(context: Context) : SQLiteOpenHelper(
@@ -25,6 +26,7 @@ class MainDatabaseHelper(context: Context) : SQLiteOpenHelper(
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
+        Log.d("Database Operations", "Database created.")
         // TODO:
     }
 

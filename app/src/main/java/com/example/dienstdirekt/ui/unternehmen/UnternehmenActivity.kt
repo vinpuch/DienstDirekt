@@ -19,9 +19,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.dienstdirekt.databinding.ActivityUnternehmensprofilBinding
 import java.io.ByteArrayOutputStream
 
+// Diese Klasse repräsentiert die Aktivität für das Unternehmensprofil.
 class UnternehmenActivity : AppCompatActivity() {
     private lateinit var binding: ActivityUnternehmensprofilBinding
 
+    // Diese Methode wird aufgerufen, wenn die Aktivität erstellt wird.
+    // Sie initialisiert die Benutzeroberfläche und setzt die Event-Handler.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -56,6 +59,8 @@ class UnternehmenActivity : AppCompatActivity() {
         }
     }
 
+    // Diese Methode fügt einen TextChangedListener zu einem EditText hinzu.
+    // Sie ändert das Aussehen des EditText, abhängig vom Inhalt.
     private fun addTextChangedListenerToEditText(editText: EditText) {
         editText.addTextChangedListener(
             object : TextWatcher {
@@ -94,6 +99,8 @@ class UnternehmenActivity : AppCompatActivity() {
         )
     }
 
+    // Diese Methode wird aufgerufen, wenn ein Ergebnis von einer anderen Aktivität zurückgegeben wird.
+    // Sie verarbeitet das Ergebnis, abhängig vom requestCode.
     override fun onActivityResult(
         requestCode: Int,
         resultCode: Int,
@@ -115,10 +122,13 @@ class UnternehmenActivity : AppCompatActivity() {
         }
     }
 
+    // Diese Methode überprüft, ob eine Zeichenkette ein gültiger Standort ist.
     private fun isValidLocation(location: String): Boolean {
         return location.matches(Regex("^[a-zA-ZäöüÄÖÜß.\\-\\s]+\\s\\d+,\\s[a-zA-ZäöüÄÖÜß.\\-\\s]+,\\s\\d{5}$"))
     }
 
+    // Diese Methode fügt Daten in die Datenbank ein.
+    // Sie überprüft zuerst, ob alle Felder ausgefüllt sind und ob der Standort gültig ist.
     fun insertData(
         name: String,
         dienstleistung: String,
@@ -162,6 +172,8 @@ class UnternehmenActivity : AppCompatActivity() {
         }
     }
 
+    // Diese Methode konvertiert ein Drawable in ein ByteArray.
+    // Sie wird verwendet, um Bilder in der Datenbank zu speichern.
     private fun getByteArrayFromDrawable(drawable: Drawable): ByteArray? {
         return when (drawable) {
             is BitmapDrawable -> {

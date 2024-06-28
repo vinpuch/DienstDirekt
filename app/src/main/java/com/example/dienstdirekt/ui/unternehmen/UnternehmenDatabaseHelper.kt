@@ -8,6 +8,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Log
 
+// Diese Klasse hilft bei der Interaktion mit der Unternehmensdatenbank.
 class UnternehmenDatabaseHelper(context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     companion object {
@@ -15,6 +16,8 @@ class UnternehmenDatabaseHelper(context: Context) :
         const val DATABASE_VERSION = 2
     }
 
+    // Diese Methode wird aufgerufen, wenn die Datenbank erstellt wird.
+    // Sie erstellt die Tabelle "unternehmen".
     override fun onCreate(db: SQLiteDatabase) {
         val CREATE_TABLE_QUERY =
             "CREATE TABLE IF NOT EXISTS unternehmen (" +
@@ -30,6 +33,8 @@ class UnternehmenDatabaseHelper(context: Context) :
         Log.d("TEST", "Datenbank wurde angelegt")
     }
 
+    // Diese Methode wird aufgerufen, wenn die Datenbank aktualisiert wird.
+    // Sie löscht die alte Tabelle und erstellt eine neue.
     override fun onUpgrade(
         db: SQLiteDatabase,
         oldVersion: Int,
@@ -39,6 +44,8 @@ class UnternehmenDatabaseHelper(context: Context) :
         onCreate(db)
     }
 
+    // Diese Methode holt ein Bild aus der Datenbank.
+    // Sie konvertiert das Bild von einem ByteArray zu einem Bitmap.
     @SuppressLint("Range")
     fun retrievePictureFromDatabase(
         context: Context,
@@ -71,6 +78,8 @@ class UnternehmenDatabaseHelper(context: Context) :
         return pictureBitmap
     }
 
+    // Diese Methode holt alle Unternehmen aus der Datenbank.
+    // Sie gibt eine Liste von UnternehmenData-Objekten zurück.
     fun getAll(): List<UnternehmenData> {
         val companyList = mutableListOf<UnternehmenData>()
         val db = readableDatabase
@@ -93,6 +102,10 @@ class UnternehmenDatabaseHelper(context: Context) :
         return companyList
     }
 
+    // Diese Methode holt alle Unternehmen aus der Datenbank und sortiert sie nach dem Namen.
+    // Sie gibt eine Liste von UnternehmenData-Objekten zurück.
+    // Wenn asc true ist, werden die Unternehmen in aufsteigender Reihenfolge sortiert.
+    // Wenn asc false ist, werden die Unternehmen in absteigender Reihenfolge sortiert.
     fun getOrderByName(asc: Boolean): List<UnternehmenData> {
         val companyList = mutableListOf<UnternehmenData>()
         val db = readableDatabase

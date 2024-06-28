@@ -24,6 +24,7 @@ class RegisterDatabaseHelper(context: Context) : SQLiteOpenHelper(
         private const val COLUMN_PASSWORD = "passwort"
     }
 
+    // Diese Funktion erstellt die Datenbank, wenn sie noch nicht existiert.
     override fun onCreate(db: SQLiteDatabase?) {
         val createTableQuery = """
             CREATE TABLE $TABLE_NAME (
@@ -38,6 +39,7 @@ class RegisterDatabaseHelper(context: Context) : SQLiteOpenHelper(
         Log.d("DatabaseCreation", "Database created successfully")
     }
 
+    // Diese Funktion aktualisiert die Datenbank, wenn eine neue Version verfügbar ist.
     override fun onUpgrade(
         db: SQLiteDatabase?,
         oldVersion: Int,
@@ -47,6 +49,7 @@ class RegisterDatabaseHelper(context: Context) : SQLiteOpenHelper(
         onCreate(db)
     }
 
+    // Diese Funktion fügt ein neues Unternehmen in die Datenbank ein.
     fun insertCompany(registerInput: RegisterInput) {
         val db = writableDatabase
         val values =
@@ -60,6 +63,7 @@ class RegisterDatabaseHelper(context: Context) : SQLiteOpenHelper(
         db.close()
     }
 
+    // Diese Funktion überprüft, ob ein Unternehmen bereits in der Datenbank existiert.
     fun checkIfExists(
         companyName: String,
         email: String,
@@ -80,6 +84,7 @@ class RegisterDatabaseHelper(context: Context) : SQLiteOpenHelper(
         return true
     }
 
+    // Diese Funktion gibt eine Liste aller Unternehmen in der Datenbank zurück.
     fun getAll(): List<RegisterInput> {
         val companyList = mutableListOf<RegisterInput>()
         val db = readableDatabase
@@ -101,6 +106,8 @@ class RegisterDatabaseHelper(context: Context) : SQLiteOpenHelper(
         return companyList
     }
 
+    // Diese Funktion gibt eine Liste aller Unternehmen in der Datenbank zurück,
+    // sortiert nach dem Firmennamen.
     fun getOrderByName(asc: Boolean): List<RegisterInput> {
         val companyList = mutableListOf<RegisterInput>()
         val db = readableDatabase

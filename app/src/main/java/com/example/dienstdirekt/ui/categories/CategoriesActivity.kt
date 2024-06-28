@@ -10,11 +10,14 @@ import com.example.dienstdirekt.R
 import com.example.dienstdirekt.databinding.ActivityCategoriesBinding
 import com.example.dienstdirekt.ui.serviceProviderList.ServiceProviderListActivity
 
+// Diese Klasse repräsentiert die Kategorien-Aktivität der Anwendung.
 class CategoriesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCategoriesBinding
     private lateinit var accountId: ImageView
     private lateinit var montageButton: ImageButton
 
+    // Diese Methode wird aufgerufen, wenn die Aktivität erstellt wird.
+    // Sie initialisiert die Benutzeroberfläche und setzt die Event-Handler.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

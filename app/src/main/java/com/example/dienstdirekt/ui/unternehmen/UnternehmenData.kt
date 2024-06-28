@@ -1,5 +1,6 @@
 package com.example.dienstdirekt.ui.unternehmen
 
+// Diese Datenklasse repräsentiert die Daten eines Unternehmens.
 data class UnternehmenData(
     val name: String,
     val dienstleistung: String,

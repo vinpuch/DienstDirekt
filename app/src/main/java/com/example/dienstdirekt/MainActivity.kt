@@ -12,6 +12,7 @@ import com.example.dienstdirekt.ui.categories.CategoriesActivity
 import com.example.dienstdirekt.ui.register.RegisterActivity
 import org.mindrot.jbcrypt.BCrypt
 
+// Diese Klasse repräsentiert die Hauptaktivität der Anwendung.
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var button: ImageButton
@@ -21,6 +22,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var emailOrPhone: EditText
     private lateinit var password: EditText
 
+    // Diese Methode wird aufgerufen, wenn die Aktivität erstellt wird.
+    // Sie initialisiert die Benutzeroberfläche und setzt die Event-Handler.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -51,6 +54,8 @@ class MainActivity : AppCompatActivity() {
         password = findViewById(R.id.passwordText)
     }
 
+    // Diese Methode überprüft, ob die Anmeldedaten gültig sind.
+    // Sie gibt true zurück, wenn die Anmeldedaten gültig sind, und false, wenn sie ungültig sind.
     private fun isValidLogin(
         emailOrPhone: EditText,
         password: EditText,

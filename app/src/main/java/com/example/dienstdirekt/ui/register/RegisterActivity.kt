@@ -24,6 +24,8 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var password: EditText
     private lateinit var passwordRepeat: EditText
 
+    // Diese Funktion wird aufgerufen, wenn die Aktivität erstellt wird.
+    // Sie initialisiert die Benutzeroberfläche und setzt die Listener für die Schaltflächen.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -66,6 +68,8 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
+    /// Diese Funktion überprüft, ob die Eingaben des Benutzers für die Registrierung gültig sind.
+    // Sie überprüft den Firmennamen, die E-Mail, die Telefonnummer und das Passwort.
     private fun isValidRegistration(
         companyNameInput: String,
         eMailInput: String,
@@ -101,18 +105,29 @@ class RegisterActivity : AppCompatActivity() {
         return true
     }
 
+    // Diese Funktion überprüft, ob der eingegebene Firmenname gültig ist.
+    // Ein gültiger Firmenname muss mindestens einen Buchstaben enthalten und darf nur
+    // Buchstaben, Zahlen, &, ., ', - und Leerzeichen enthalten.
     private fun isValidCompanyName(name: String): Boolean {
         return name.matches(Regex("^(?=.*[a-zA-Z])[a-zA-Z0-9&.,'\\-\\s]+$"))
     }
 
+    /// Diese Funktion überprüft, ob die eingegebene E-Mail-Adresse gültig ist.
+    // Eine gültige E-Mail-Adresse muss der Standardform entsprechen.
     private fun isValidEmail(email: String): Boolean {
         return email.matches(Regex("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$"))
     }
 
+    // Diese Funktion überprüft, ob die eingegebene Telefonnummer gültig ist.
+    // Eine gültige Telefonnummer muss einer Standardtelefonnummer entsprechen.
     private fun isValidPhoneNumber(phoneNumber: String): Boolean {
         return phoneNumber.matches(Regex("^\\+?[0-9. ()-]{7,15}\$"))
     }
 
+    // Diese Funktion überprüft, ob das eingegebene Passwort gültig ist.
+    // Ein gültiges Passwort muss mindestens einen Kleinbuchstaben, einen Großbuchstaben, eine Zahl
+    // und ein Sonderzeichen enthalten und mindestens 8 Zeichen lang sein.
+    // Gutes Beispiel wäre: Passwort123!
     private fun isValidPassword(password: String): Boolean {
         return password.matches(Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@\$!%*?&])[A-Za-z\\d@\$!%*?&]{8,}$"))
     }
